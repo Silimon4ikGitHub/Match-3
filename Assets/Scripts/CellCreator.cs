@@ -9,34 +9,40 @@ using UnityEditor;
 public class CellCreator : MonoBehaviour
 {
     [Header ("Put Cell Detailes")]
+    
     [SerializeField] private  int rows;
     [SerializeField] private  int collums;
-    [SerializeField] private  int offsetx;
-    [SerializeField] private  int offsety;
-    [SerializeField] private  int maxCount;
-    [SerializeField] private  int counter;
-    [SerializeField] private  bool isMoveRight = true;
+    [Header ("Put Pin Position")]
+    [SerializeField] private  int pinRow;
+    [SerializeField] private  int pinCollum;
+    private int[,] field ;
+    private  int offsetx;
+    private  int offsety;
+    private  int cellCounter;
+    private  int pinCounter;
+    private  bool isMoveRight = true;
 
     [Header ("Objects")]
     [SerializeField] private  GameObject cellPrefab;
+    [SerializeField] private  GameObject[] pinPrefabs;
     [SerializeField] private  Transform parentObject;
     
     
     
     [ContextMenu("Tools / AddCells")]
-     void AddCells()
+    
+    public void AddCells()
     {
-      maxCount = rows * collums;
-      
-      
-        for (int i=0; i < maxCount; i++)
+      field = new int [rows,collums];
+
+        for (int i=0; i < field.Length; i++)
         {
-         Vector3 newPosition = new Vector3(transform.position.x + offsetx, transform.position.y + offsety, transform.position.z);
-         Instantiate( cellPrefab, newPosition, transform.rotation, parentObject);
+         Vector3 pinPosition = new Vector3(transform.position.x + offsetx, transform.position.y + offsety, transform.position.z);
+         Instantiate( cellPrefab, pinPosition, transform.rotation, parentObject);
          
-         counter ++;
+         cellCounter ++;
         
-          if (counter == rows)
+          if (cellCounter == rows)
           {
             ChangeDirrectionOfCells();
           }
@@ -48,20 +54,16 @@ public class CellCreator : MonoBehaviour
           {
             offsetx--;
           }
-          Debug.Log("Adding");
-          
-        }
-        
-        
+        } 
     }
      public  void ChangeDirrectionOfCells()
         {
             isMoveRight =! isMoveRight;
             offsety++;
-            counter = 0;
+            cellCounter = 0;
         }
 
-     [ContextMenu("Tools / DeleteCells")]
+     [ContextMenu("Tools / DeleteAll")]
      void DeleteCells()
      {
       while (transform.childCount > 0)
@@ -69,10 +71,31 @@ public class CellCreator : MonoBehaviour
       DestroyImmediate(transform.GetChild(0).gameObject);
       offsetx = 0;
       offsety = 0;
+      isMoveRight = true;
       Debug.Log("Deleting");
       }
-      
      }
+     [ContextMenu("Tools / Add Pin")]
+     void AddPins()
+     {
+      field = new int [rows,collums];
+      
+        for (int i=0; i < field.Length; i++)
+        {
+         Vector3 newPosition = new Vector3(transform.position.x + pinRow -1, transform.position.y + pinCollum -1, transform.position.z);
+
+         int random = Random.Range(0, pinPrefabs.Length);
+
+         if(i == pinRow)
+         {
+         Instantiate(pinPrefabs[random], newPosition, transform.rotation, parentObject);
+         Debug.Log("Pin Added");
+         }
+         pinCounter ++;
+        }
+        
+    }
+     
 
       
    
