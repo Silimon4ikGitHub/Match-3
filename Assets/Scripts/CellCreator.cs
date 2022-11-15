@@ -19,7 +19,7 @@ public class CellCreator : MonoBehaviour
     private  int offsetx;
     private  int offsety;
     private  int cellCounter;
-    private  int pinCounter;
+    [SerializeField] private  int pinCounter;
     private  bool isMoveRight = true;
 
     [Header ("Objects")]
@@ -54,13 +54,16 @@ public class CellCreator : MonoBehaviour
           {
             offsetx--;
           }
-        } 
+        }
+        offsetx = 0;
+        offsety = 0; 
     }
      public  void ChangeDirrectionOfCells()
         {
             isMoveRight =! isMoveRight;
             offsety++;
             cellCounter = 0;
+            pinCounter = 0;
         }
 
      [ContextMenu("Tools / DeleteAll")]
@@ -71,8 +74,8 @@ public class CellCreator : MonoBehaviour
       DestroyImmediate(transform.GetChild(0).gameObject);
       offsetx = 0;
       offsety = 0;
+      pinCounter = 0;
       isMoveRight = true;
-      Debug.Log("Deleting");
       }
      }
      [ContextMenu("Tools / Add Pin")]
@@ -89,15 +92,40 @@ public class CellCreator : MonoBehaviour
          if(i == pinRow)
          {
          Instantiate(pinPrefabs[random], newPosition, transform.rotation, parentObject);
-         Debug.Log("Pin Added");
          }
          pinCounter ++;
         }
-        
     }
-     
+    [ContextMenu("Tools / Add All Pins")]
+    void AddAllPins()
+     {
+      field = new int [rows,collums];
 
-      
-   
-   
+        for (int i=0; i < field.Length; i++)
+        {
+         Vector3 pinPosition = new Vector3(transform.position.x + offsetx, transform.position.y + offsety, transform.position.z);
+
+         int random = Random.Range(0, pinPrefabs.Length);
+         Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
+         
+         pinCounter ++;
+         
+          if (pinCounter == rows)
+          {
+            ChangeDirrectionOfCells();
+            Debug.Log("Here Working");
+          }
+          else if (isMoveRight == true)
+          {
+            offsetx++;
+          }
+          else if (isMoveRight == false)
+          {
+            offsetx--;
+          }
+        }
+        pinCounter = 0;
+        offsetx = 0;
+        offsety = 0;  
+    } 
 }
