@@ -38,7 +38,7 @@ public class CellCreator : MonoBehaviour
         for (int i=0; i < field.Length; i++)
         {
          Vector3 pinPosition = new Vector3(transform.position.x + offsetx, transform.position.y + offsety, transform.position.z);
-         Instantiate( cellPrefab, pinPosition, transform.rotation, parentObject);
+         var cell = Instantiate( cellPrefab, pinPosition, transform.rotation, parentObject);
          
          cellCounter ++;
         
@@ -54,9 +54,11 @@ public class CellCreator : MonoBehaviour
           {
             offsetx--;
           }
+          EditorUtility.SetDirty(cell);
         }
         offsetx = 0;
         offsety = 0; 
+        
     }
      public  void ChangeDirrectionOfCells()
         {
@@ -91,9 +93,11 @@ public class CellCreator : MonoBehaviour
 
          if(i == pinRow)
          {
-         Instantiate(pinPrefabs[random], newPosition, transform.rotation, parentObject);
+         var cell = Instantiate(pinPrefabs[random], newPosition, transform.rotation, parentObject);
+         EditorUtility.SetDirty(cell);
          }
          pinCounter ++;
+         
         }
     }
     [ContextMenu("Tools / Add All Pins")]
@@ -106,14 +110,14 @@ public class CellCreator : MonoBehaviour
          Vector3 pinPosition = new Vector3(transform.position.x + offsetx, transform.position.y + offsety, transform.position.z);
 
          int random = Random.Range(0, pinPrefabs.Length);
-         Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
-         
+         var cell = Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
+         EditorUtility.SetDirty(cell);
          pinCounter ++;
          
           if (pinCounter == rows)
           {
             ChangeDirrectionOfCells();
-            Debug.Log("Here Working");
+            
           }
           else if (isMoveRight == true)
           {
@@ -127,5 +131,12 @@ public class CellCreator : MonoBehaviour
         pinCounter = 0;
         offsetx = 0;
         offsety = 0;  
-    } 
+    }
+    [ContextMenu("Tools / Change All Pins")]
+    void ChangeAllPins()
+    {
+      DeleteCells();
+      AddCells();
+      AddAllPins();
+    }
 }
