@@ -15,7 +15,9 @@ public class CellCreator : MonoBehaviour
     [Header ("Put Pin Position")]
     [SerializeField] private  int pinRow;
     [SerializeField] private  int pinCollum;
-    private int[,] field ;
+    
+    private int[,] cells;
+    private int[,] pins;
     private  int offsetx;
     private  int offsety;
     private  int cellCounter;
@@ -25,6 +27,8 @@ public class CellCreator : MonoBehaviour
     [Header ("Objects")]
     [SerializeField] private  GameObject cellPrefab;
     [SerializeField] private  GameObject[] pinPrefabs;
+    [SerializeField] private  GameObject[] cellsObjects;
+    [SerializeField] private  GameObject[] pinsObjects;
     [SerializeField] private  Transform parentObject;
     
     
@@ -33,13 +37,15 @@ public class CellCreator : MonoBehaviour
     
     public void AddCells()
     {
-      field = new int [rows,collums];
+      
+      cells = new int [rows,collums];
+      cellsObjects = new GameObject [rows * collums];
 
-        for (int i=0; i < field.Length; i++)
+        for (int i=0; i < cells.Length; i++)
         {
          Vector3 pinPosition = new Vector3(transform.position.x + offsetx, transform.position.y + offsety, transform.position.z);
          var cell = Instantiate( cellPrefab, pinPosition, transform.rotation, parentObject);
-         
+         cellsObjects[i] = parentObject.transform.GetChild(i).gameObject; // Input Pins in Array
          cellCounter ++;
         
           if (cellCounter == rows)
@@ -83,9 +89,9 @@ public class CellCreator : MonoBehaviour
      [ContextMenu("Tools / Add Pin")]
      void AddPins()
      {
-      field = new int [rows,collums];
+      pins = new int [rows,collums];
       
-        for (int i=0; i < field.Length; i++)
+        for (int i=0; i < pins.Length; i++)
         {
          Vector3 newPosition = new Vector3(transform.position.x + pinRow -1, transform.position.y + pinCollum -1, transform.position.z);
 
@@ -94,6 +100,7 @@ public class CellCreator : MonoBehaviour
          if(i == pinRow)
          {
          var cell = Instantiate(pinPrefabs[random], newPosition, transform.rotation, parentObject);
+         
          EditorUtility.SetDirty(cell);
          }
          pinCounter ++;
@@ -103,15 +110,17 @@ public class CellCreator : MonoBehaviour
     [ContextMenu("Tools / Add All Pins")]
     void AddAllPins()
      {
-      field = new int [rows,collums];
+      pins = new int [rows,collums];
+      pinsObjects = new GameObject [rows * collums];
 
-        for (int i=0; i < field.Length; i++)
+        for (int i=0; i < pins.Length; i++)
         {
          Vector3 pinPosition = new Vector3(transform.position.x + offsetx, transform.position.y + offsety, transform.position.z);
 
          int random = Random.Range(0, pinPrefabs.Length);
          var cell = Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
-         EditorUtility.SetDirty(cell);
+         pinsObjects[i] = parentObject.transform.GetChild(i).gameObject;
+         
          pinCounter ++;
          
           if (pinCounter == rows)
@@ -127,6 +136,7 @@ public class CellCreator : MonoBehaviour
           {
             offsetx--;
           }
+          EditorUtility.SetDirty(cell);
         }
         pinCounter = 0;
         offsetx = 0;
