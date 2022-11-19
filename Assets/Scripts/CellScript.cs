@@ -4,16 +4,34 @@ using UnityEngine;
 
 public class CellScript : MonoBehaviour
 {
-    [SerializeField] private bool isEmpty;
-    public static bool _isEmpty;
-    [SerializeField] Transform cellPSN;
-    public static Transform pinPSN;
-
-
+    [SerializeField] private bool isFull;
+    [SerializeField] private Vector3 cellPSN;
+    [SerializeField] private PinsCreator pins; 
+    [SerializeField] private  GameObject pinn; 
     
     void Awake()
     {
-        Debug.Log("Here is Working");   
+        cellPSN = transform.position;
+        pinn = GameObject.Find("Pins");
+        pins = pinn.GetComponent<PinsCreator>();
     }
-    
+    void Update()
+    {
+        if(pins.isPinsOnscene == true)
+        {
+        
+         if(pins.pinsObjects.Length > 0)
+         {
+          for (int i=0; i < pins.pinsObjects.Length; i++)
+          {
+            
+           if (cellPSN == pins.pinsObjects[i].transform.position)
+           {
+            isFull = true;
+           }
+          }
+         }
+        }
+        
+    }
 }

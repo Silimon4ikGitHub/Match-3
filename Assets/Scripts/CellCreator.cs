@@ -11,28 +11,22 @@ public class CellCreator : MonoBehaviour
     [Header ("Put Cell Detailes")]
     
     [SerializeField] private  int rows;
-    [SerializeField] private  int collums;
-    [Header ("Put Pin Position")]
-    [SerializeField] private  int pinRow;
-    [SerializeField] private  int pinCollum;
-    
+    [SerializeField] private  int collums;    
     private int[,] cells;
-    private int[,] pins;
     private  int offsetx;
     private  int offsety;
-    private  int cellCounter;
-    [SerializeField] private  int pinCounter;
-    private  bool isMoveRight = true;
+    [SerializeField] private  int cellCounter;
 
     [Header ("Objects")]
-    [SerializeField] private  GameObject cellPrefab;
     [SerializeField] private  GameObject[] pinPrefabs;
-    [SerializeField] private  GameObject[] cellsObjects;
-    [SerializeField] private  GameObject[] pinsObjects;
+    [SerializeField] private  GameObject cellPrefab;
+
+        public  GameObject[] cellsObjects;
+
     [SerializeField] private  Transform parentObject;
-    
-    
-    
+
+    public GameObject CellPrefab { get => cellPrefab; set => cellPrefab = value; }
+
     [ContextMenu("Tools / AddCells")]
     
     public void AddCells()
@@ -44,21 +38,14 @@ public class CellCreator : MonoBehaviour
         for (int i=0; i < cells.Length; i++)
         {
          Vector3 pinPosition = new Vector3(transform.position.x + offsetx, transform.position.y + offsety, transform.position.z);
-         var cell = Instantiate( cellPrefab, pinPosition, transform.rotation, parentObject);
+         var cell = Instantiate( CellPrefab, pinPosition, transform.rotation, parentObject);
          cellsObjects[i] = parentObject.transform.GetChild(i).gameObject; // Input Pins in Array
          cellCounter ++;
+         offsetx++;
         
           if (cellCounter == rows)
           {
-            ChangeDirrectionOfCells();
-          }
-          else if (isMoveRight == true)
-          {
-            offsetx++;
-          }
-          else if (isMoveRight == false)
-          {
-            offsetx--;
+            NextRow();
           }
           EditorUtility.SetDirty(cell);
         }
@@ -66,15 +53,14 @@ public class CellCreator : MonoBehaviour
         offsety = 0; 
         
     }
-     public  void ChangeDirrectionOfCells()
+     public  void NextRow()
         {
-            isMoveRight =! isMoveRight;
+            offsetx = 0;
             offsety++;
             cellCounter = 0;
-            pinCounter = 0;
         }
 
-     [ContextMenu("Tools / DeleteAll")]
+     [ContextMenu("Tools / DeleteCells")]
      void DeleteCells()
      {
       while (transform.childCount > 0)
@@ -82,71 +68,22 @@ public class CellCreator : MonoBehaviour
       DestroyImmediate(transform.GetChild(0).gameObject);
       offsetx = 0;
       offsety = 0;
-      pinCounter = 0;
-      isMoveRight = true;
+      cellCounter = 0;
       }
      }
-     [ContextMenu("Tools / Add Pin")]
-     void AddPins()
-     {
-      pins = new int [rows,collums];
-      
-        for (int i=0; i < pins.Length; i++)
-        {
-         Vector3 newPosition = new Vector3(transform.position.x + pinRow -1, transform.position.y + pinCollum -1, transform.position.z);
 
-         int random = Random.Range(0, pinPrefabs.Length);
-
-         if(i == pinRow)
-         {
-         var cell = Instantiate(pinPrefabs[random], newPosition, transform.rotation, parentObject);
-         
-         EditorUtility.SetDirty(cell);
-         }
-         pinCounter ++;
-         
-        }
-    }
-    [ContextMenu("Tools / Add All Pins")]
-    void AddAllPins()
-     {
-      pins = new int [rows,collums];
-      pinsObjects = new GameObject [rows * collums];
-
-        for (int i=0; i < pins.Length; i++)
-        {
-         Vector3 pinPosition = new Vector3(transform.position.x + offsetx, transform.position.y + offsety, transform.position.z);
-
-         int random = Random.Range(0, pinPrefabs.Length);
-         var cell = Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
-         pinsObjects[i] = parentObject.transform.GetChild(i).gameObject;
-         
-         pinCounter ++;
-         
-          if (pinCounter == rows)
-          {
-            ChangeDirrectionOfCells();
-            
-          }
-          else if (isMoveRight == true)
-          {
-            offsetx++;
-          }
-          else if (isMoveRight == false)
-          {
-            offsetx--;
-          }
-          EditorUtility.SetDirty(cell);
-        }
-        pinCounter = 0;
-        offsetx = 0;
-        offsety = 0;  
-    }
-    [ContextMenu("Tools / Change All Pins")]
-    void ChangeAllPins()
+    public override bool Equals(object obj)
     {
-      DeleteCells();
-      AddCells();
-      AddAllPins();
+        return obj is CellCreator creator &&
+               base.Equals(obj) &&
+               EqualityComparer<GameObject>.Default.Equals(CellPrefab, creator.CellPrefab);
+    }
+
+    public override int GetHashCode()
+    {
+        int hashCode = 435074089;
+        hashCode = hashCode * -1521134295 + base.GetHashCode();
+        hashCode = hashCode * -1521134295 + EqualityComparer<GameObject>.Default.GetHashCode(CellPrefab);
+        return hashCode;
     }
 }

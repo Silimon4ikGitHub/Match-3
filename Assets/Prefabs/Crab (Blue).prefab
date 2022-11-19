@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6188955062414161818}
   - component: {fileID: 6188955062414161817}
   - component: {fileID: 6188955062414161819}
+  - component: {fileID: 6559940291953893879}
   m_Layer: 0
   m_Name: Crab (Blue)
   m_TagString: Untagged
@@ -102,3 +103,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6559940291953893879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6188955062414161816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4161c5fef42ce504cb6d62bdd524fae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imIn: 0
+  pinPSN: {x: 0, y: 0, z: 0}
+  pins: {fileID: 0}
+  cell: {fileID: 0}

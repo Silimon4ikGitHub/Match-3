@@ -4,15 +4,27 @@ using UnityEngine;
 
 public class PinScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private  bool imIn;
+    [SerializeField] private Vector3 pinPSN;
+    [SerializeField] private CellCreator pins;
+    [SerializeField] private  GameObject cell; 
+    
+    void Awake()
     {
-        
+        pinPSN = transform.position;
+        cell = GameObject.Find("Cells");
+        pins = cell.GetComponent<CellCreator>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         
+        for (int i=0; i < pins.cellsObjects.Length; i++)
+        {
+            
+        if (pinPSN == pins.cellsObjects[i].transform.position)
+         {
+            imIn = true;
+         }
+        }
     }
 }
