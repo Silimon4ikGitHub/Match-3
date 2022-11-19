@@ -787,7 +787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rows: 4
-  collums: 8
+  collums: 10
   pinRow: 4
   pinCollum: 8
   isPinsOnscene: 0
@@ -798,6 +798,14 @@ MonoBehaviour:
   - {fileID: 957139927803927288, guid: 827579c180424494ea548f996d8a6aef, type: 3}
   - {fileID: 994322843064576601, guid: 7958053eb060c4f4ab060c918a9729f9, type: 3}
   pinsObjects:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

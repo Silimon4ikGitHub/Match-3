@@ -11,6 +11,7 @@ public class PinsCreator : MonoBehaviour
     [Header ("Put Cell Detailes")]
     [SerializeField] private  int rows;
     [SerializeField] private  int collums;
+
     [Header ("Put Pin Position")]
     [SerializeField] private  int pinRow;
     [SerializeField] private  int pinCollum;
@@ -18,7 +19,6 @@ public class PinsCreator : MonoBehaviour
     private  int offsetx;
     private  int offsety;
     private  int pinCounter;
-
     public  bool isPinsOnscene = false;
 
     [Header ("Objects")]
@@ -49,28 +49,36 @@ public class PinsCreator : MonoBehaviour
      [ContextMenu("Tools / Add Pin")]
      void AddPins()
      {
-
+      isPinsOnscene = true;
       pins = new int [rows,collums];
-      
+      pinsObjects = new GameObject [rows * collums];
+
         for (int i=0; i < pins.Length; i++)
         {
-        pinsObjects = new GameObject [rows * collums];
-
-         Vector3 newPosition = new Vector3(transform.position.x + pinRow -1, transform.position.y + pinCollum -1, transform.position.z);
+         Vector3 pinPosition = new Vector3(transform.position.x + offsetx, transform.position.y + offsety, transform.position.z);
 
          int random = Random.Range(0, pinPrefabs.Length);
-
-         if(i == pinRow)
+         if(i > pins.Length - rows - 1)
          {
-         var cell = Instantiate(pinPrefabs[random], newPosition, transform.rotation, parentObject);
+         int childCounter = 0;
+         var cell = Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
+         pinsObjects[i] = parentObject.transform.GetChild(childCounter++).gameObject;
          EditorUtility.SetDirty(cell);
          }
 
-         pinsObjects[i] = parentObject.transform.GetChild(i).gameObject;
-         }
-
          pinCounter ++;
+         offsetx++;
+         
+        if (pinCounter == rows)
+          {
+            NextRow();
+          }
+          
         }
+        pinCounter = 0;
+        offsetx = 0;
+        offsety = 0;  
+    }
     
 
     [ContextMenu("Tools / Add All Pins")]
