@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PinScript : MonoBehaviour
 {
+    [SerializeField] private  float speed = 1;
     [SerializeField] private  bool imIn;
     [SerializeField] private Vector3 pinPSN;
     [SerializeField] private CellCreator pins;
@@ -26,5 +27,9 @@ public class PinScript : MonoBehaviour
             imIn = true;
          }
         }
+    }
+    void FixedUpdate()
+    {
+        transform.position = new Vector3 (transform.position.x, transform.position.y + speed * Time.deltaTime, transform.position.z);
     }
 }

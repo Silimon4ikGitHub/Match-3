@@ -65,6 +65,7 @@ public class PinsCreator : MonoBehaviour
          pinsObjects[i] = parentObject.transform.GetChild(childCounter++).gameObject;
          EditorUtility.SetDirty(cell);
          }
+         else pinsObjects[i] = null;
 
          pinCounter ++;
          offsetx++;

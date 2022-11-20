@@ -24,10 +24,17 @@ public class CellScript : MonoBehaviour
          {
           for (int i=0; i < pins.pinsObjects.Length; i++)
           {
+            if(pins.pinsObjects[i] != null)
+            {
             
-           if (cellPSN == pins.pinsObjects[i].transform.position)
-           {
-            isFull = true;
+             if (cellPSN == pins.pinsObjects[i].transform.position)
+             {
+              isFull = true;
+             }
+             else
+             {
+             isFull = false;
+             }
            }
           }
          }
