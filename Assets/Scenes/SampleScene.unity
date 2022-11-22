@@ -1037,7 +1037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67df28e4d9177e498eba6a856e9b223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 0
+  isFull: 1
   myCount: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
@@ -1600,7 +1600,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67df28e4d9177e498eba6a856e9b223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 0
+  isFull: 1
   myCount: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
@@ -3100,7 +3100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67df28e4d9177e498eba6a856e9b223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 0
+  isFull: 1
   myCount: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
@@ -3290,7 +3290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67df28e4d9177e498eba6a856e9b223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 0
+  isFull: 1
   myCount: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
@@ -3385,7 +3385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f67df28e4d9177e498eba6a856e9b223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isFull: 0
+  isFull: 1
   myCount: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}

@@ -20,7 +20,7 @@ public class PinsCreator : MonoBehaviour
     private  int offsety;
     private  int pinCounter;
     public int countInArray;
-    [SerializeField] private int childCounter = 0;
+    [SerializeField] private int childCounter;
     
     public  bool isPinsOnscene = false;
 
@@ -47,6 +47,7 @@ public class PinsCreator : MonoBehaviour
       offsety = 0;
       pinCounter = 0;
       countInArray = 0;
+      childCounter = 0;
       isPinsOnscene = false;
       }
      }
@@ -83,6 +84,7 @@ public class PinsCreator : MonoBehaviour
           
         }
         pinCounter = 0;
+        countInArray = 0;
         offsetx = 0;
         offsety = 0;  
     }

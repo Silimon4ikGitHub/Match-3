@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CellScript : MonoBehaviour
 {
-    [SerializeField] private bool isFull;
+    public bool isFull;
     [SerializeField] private int myCount;
     [SerializeField] private Vector3 cellPSN;
     [SerializeField] private Vector3 pinPSN;
@@ -34,7 +34,6 @@ public class CellScript : MonoBehaviour
           {
             if(pinsCreatorScript.pinsObjects[i] != null)
             {
-              Debug.Log(i);
             pinPSN = pinsCreatorScript.pinsObjects[i].transform.position;
              if (cellPSN == pinPSN)
              {
@@ -55,9 +54,10 @@ public class CellScript : MonoBehaviour
             pinPSN = pinsCreatorScript.pinsObjects[i].transform.position;
              if (cellPSN == pinPSN)
              {
-              ;
               isFull = true;
+              Debug.Log("Here IS WORKING!");
              }
+             
            }
           }
     

@@ -28,8 +28,15 @@ public class PinScriptNew : MonoBehaviour
     void FixedUpdate()
     {
         pinPSN = transform.position;
-        Debug.Log(transform.position);
         cellPSN = cellCreatorScript.cellsObjects[myCount].transform.position;
+
+        
+        CheckNextCellAndGo();
+        if(pinPSN == cellPSN)
+        {
+            myCount = myCount - 4;
+        }
+        
     }
     void GoDown()
     {
@@ -37,14 +44,14 @@ public class PinScriptNew : MonoBehaviour
         targetCell = cellCreatorScript.cellsObjects[myCount].transform.position;
         transform.position = Vector3.MoveTowards(transform.position, targetCell, speed );
     }
-    void NextCell()
+    void CheckNextCellAndGo()
     {
-        if (pinPSN == cellPSN)
+        var nextCell = cellCreatorScript.cellsObjects[myCount].GetComponent<CellScript>();
+        
+        if(nextCell.isFull == false)
         {
-
+            GoDown();
+            
         }
     }
-    
-    
-
 }
