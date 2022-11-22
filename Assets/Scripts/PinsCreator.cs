@@ -19,11 +19,15 @@ public class PinsCreator : MonoBehaviour
     private  int offsetx;
     private  int offsety;
     private  int pinCounter;
+    public int countInArray;
+    [SerializeField] private int childCounter = 0;
+    
     public  bool isPinsOnscene = false;
 
     [Header ("Objects")]
     [SerializeField] private  GameObject[] pinPrefabs;
     public  GameObject[] pinsObjects;
+    public  GameObject[] pinsOnScene;
     [SerializeField] private  Transform parentObject;
 
      public  void NextRow()
@@ -42,6 +46,7 @@ public class PinsCreator : MonoBehaviour
       offsetx = 0;
       offsety = 0;
       pinCounter = 0;
+      countInArray = 0;
       isPinsOnscene = false;
       }
      }
@@ -56,17 +61,18 @@ public class PinsCreator : MonoBehaviour
         for (int i=0; i < pins.Length; i++)
         {
          Vector3 pinPosition = new Vector3(transform.position.x + offsetx, transform.position.y + offsety, transform.position.z);
-
+         countInArray++;
          int random = Random.Range(0, pinPrefabs.Length);
          if(i > pins.Length - rows - 1)
          {
-         int childCounter = 0;
+         
          var cell = Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
-         pinsObjects[i] = parentObject.transform.GetChild(childCounter++).gameObject;
+         pinsObjects[i] = parentObject.transform.GetChild(childCounter).gameObject;
+         childCounter++;
          EditorUtility.SetDirty(cell);
          }
          else pinsObjects[i] = null;
-
+        
          pinCounter ++;
          offsetx++;
          
@@ -97,6 +103,7 @@ public class PinsCreator : MonoBehaviour
          int random = Random.Range(0, pinPrefabs.Length);
          var cell = Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
          pinsObjects[i] = parentObject.transform.GetChild(i).gameObject;
+         
          
          pinCounter ++;
          offsetx++;

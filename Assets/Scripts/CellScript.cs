@@ -5,40 +5,61 @@ using UnityEngine;
 public class CellScript : MonoBehaviour
 {
     [SerializeField] private bool isFull;
+    [SerializeField] private int myCount;
     [SerializeField] private Vector3 cellPSN;
-    [SerializeField] private PinsCreator pins; 
+    [SerializeField] private Vector3 pinPSN;
+    [SerializeField] private PinsCreator pinsCreatorScript;
+    [SerializeField] private CellCreator cellCreatorScript;
     [SerializeField] private  GameObject pinn; 
     
     void Awake()
     {
         cellPSN = transform.position;
         pinn = GameObject.Find("Pins");
-        pins = pinn.GetComponent<PinsCreator>();
+        pinsCreatorScript = pinn.GetComponent<PinsCreator>();
     }
     void Update()
     {
-        if(pins.isPinsOnscene == true)
+     SearchForSamePSN();
+        
+    }
+    void TestCheking()
+   {
+    if(pinsCreatorScript.isPinsOnscene == true)
         {
         
-         if(pins.pinsObjects.Length > 0)
+         if(pinsCreatorScript.pinsObjects.Length > 0)
          {
-          for (int i=0; i < pins.pinsObjects.Length; i++)
+          for (int i=0; i < pinsCreatorScript.pinsObjects.Length; i++)
           {
-            if(pins.pinsObjects[i] != null)
+            if(pinsCreatorScript.pinsObjects[i] != null)
             {
-            
-             if (cellPSN == pins.pinsObjects[i].transform.position)
+              Debug.Log(i);
+            pinPSN = pinsCreatorScript.pinsObjects[i].transform.position;
+             if (cellPSN == pinPSN)
              {
               isFull = true;
-             }
-             else
-             {
-             isFull = false;
              }
            }
           }
          }
         }
-        
-    }
+   }
+   void SearchForSamePSN()
+   {
+    for (int i=0; i < pinsCreatorScript.pinsObjects.Length; i++)
+          {
+            if(pinsCreatorScript.pinsObjects[i] != null)
+            {
+              
+            pinPSN = pinsCreatorScript.pinsObjects[i].transform.position;
+             if (cellPSN == pinPSN)
+             {
+              ;
+              isFull = true;
+             }
+           }
+          }
+    
+   }
 }
