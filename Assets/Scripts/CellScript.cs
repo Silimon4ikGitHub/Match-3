@@ -17,33 +17,13 @@ public class CellScript : MonoBehaviour
         cellPSN = transform.position;
         pinn = GameObject.Find("Pins");
         pinsCreatorScript = pinn.GetComponent<PinsCreator>();
+        isFull = false;
     }
     void Update()
     {
      SearchForSamePSN();
         
     }
-    void TestCheking()
-   {
-    if(pinsCreatorScript.isPinsOnscene == true)
-        {
-        
-         if(pinsCreatorScript.pinsObjects.Length > 0)
-         {
-          for (int i=0; i < pinsCreatorScript.pinsObjects.Length; i++)
-          {
-            if(pinsCreatorScript.pinsObjects[i] != null)
-            {
-            pinPSN = pinsCreatorScript.pinsObjects[i].transform.position;
-             if (cellPSN == pinPSN)
-             {
-              isFull = true;
-             }
-           }
-          }
-         }
-        }
-   }
    void SearchForSamePSN()
    {
     for (int i=0; i < pinsCreatorScript.pinsObjects.Length; i++)
@@ -55,11 +35,9 @@ public class CellScript : MonoBehaviour
              if (cellPSN == pinPSN)
              {
               isFull = true;
-              Debug.Log("Here IS WORKING!");
+              Debug.Log("TRUE!");
              }
-             
            }
           }
-    
    }
 }

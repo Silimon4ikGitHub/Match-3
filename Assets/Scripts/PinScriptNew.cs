@@ -32,9 +32,12 @@ public class PinScriptNew : MonoBehaviour
 
         
         CheckNextCellAndGo();
+        if (myCount >= 4)
+        {
         if(pinPSN == cellPSN)
         {
             myCount = myCount - 4;
+        }
         }
         
     }
@@ -54,4 +57,5 @@ public class PinScriptNew : MonoBehaviour
             
         }
     }
+    
 }
