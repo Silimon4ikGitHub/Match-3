@@ -56,7 +56,7 @@ public class PinsCreator : MonoBehaviour
      {
       isPinsOnscene = true;
       pins = new int [rows,collums];
-      pinsObjects = new GameObject [rows * collums];
+      
 
         for (int i=0; i < pins.Length; i++)
         {

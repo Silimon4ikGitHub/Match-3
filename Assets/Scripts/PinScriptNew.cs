@@ -34,7 +34,7 @@ public class PinScriptNew : MonoBehaviour
         cellPSN = cellCreatorScript.cellsObjects[myCount].transform.position;
 
         
-        
+        pinsCreatorScript.pinsObjects[myCount] = transform.gameObject;
         currentCell = cellCreatorScript.cellsObjects[myCount].GetComponent<CellScript>();
         
 

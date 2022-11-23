@@ -3606,6 +3606,8 @@ MonoBehaviour:
   collums: 8
   pinRow: 4
   pinCollum: 1
+  countInArray: 0
+  childCounter: 0
   isPinsOnscene: 0
   pinPrefabs:
   - {fileID: 6188955062414161816, guid: ffeb971bc96de5146be3d50a8646313d, type: 3}
@@ -3646,6 +3648,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  pinsOnScene: []
   parentObject: {fileID: 1973341228}
 --- !u!1 &2078597892
 GameObject:
