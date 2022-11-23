@@ -19,6 +19,7 @@ public class CellCreator : MonoBehaviour
 
     [Header ("Objects")]
     [SerializeField] private  GameObject[] pinPrefabs;
+<<<<<<< HEAD
     [SerializeField] private  GameObject cellPrefab;
 
         public  GameObject[] cellsObjects;
@@ -27,6 +28,11 @@ public class CellCreator : MonoBehaviour
 
     public GameObject CellPrefab { get => cellPrefab; set => cellPrefab = value; }
 
+=======
+    [SerializeField] private  GameObject[] cellsObjects;
+    [SerializeField] private  Transform parentObject; 
+    
+>>>>>>> 5406889d384c393a6582973f665cc14d22bdec05
     [ContextMenu("Tools / AddCells")]
     
     public void AddCells()
@@ -71,6 +77,7 @@ public class CellCreator : MonoBehaviour
       cellCounter = 0;
       }
      }
+<<<<<<< HEAD
 
     public override bool Equals(object obj)
     {
@@ -87,3 +94,6 @@ public class CellCreator : MonoBehaviour
         return hashCode;
     }
 }
+=======
+}
+>>>>>>> 5406889d384c393a6582973f665cc14d22bdec05
