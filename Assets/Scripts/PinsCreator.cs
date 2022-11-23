@@ -11,7 +11,10 @@ public class PinsCreator : MonoBehaviour
     [Header ("Put Cell Detailes")]
     [SerializeField] private  int rows;
     [SerializeField] private  int collums;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 5406889d384c393a6582973f665cc14d22bdec05
     [Header ("Put Pin Position")]
     [SerializeField] private  int pinRow;
     [SerializeField] private  int pinCollum;
@@ -19,6 +22,7 @@ public class PinsCreator : MonoBehaviour
     private  int offsetx;
     private  int offsety;
     private  int pinCounter;
+<<<<<<< HEAD
     public int countInArray;
     [SerializeField] private int childCounter;
     
@@ -28,6 +32,12 @@ public class PinsCreator : MonoBehaviour
     [SerializeField] private  GameObject[] pinPrefabs;
     public  GameObject[] pinsObjects;
     public  GameObject[] pinsOnScene;
+=======
+
+    [Header ("Objects")]
+    [SerializeField] private  GameObject[] pinPrefabs;
+    [SerializeField] private  GameObject[] pinsObjects;
+>>>>>>> 5406889d384c393a6582973f665cc14d22bdec05
     [SerializeField] private  Transform parentObject;
 
      public  void NextRow()
@@ -46,6 +56,7 @@ public class PinsCreator : MonoBehaviour
       offsetx = 0;
       offsety = 0;
       pinCounter = 0;
+<<<<<<< HEAD
       countInArray = 0;
       isPinsOnscene = false;
       }
@@ -95,6 +106,34 @@ public class PinsCreator : MonoBehaviour
     void AddAllPins()
      {
       isPinsOnscene = true;
+=======
+      }
+     }
+     [ContextMenu("Tools / Add Pin")]
+     void AddPins()
+     {
+      pins = new int [rows,collums];
+      
+        for (int i=0; i < pins.Length; i++)
+        {
+         Vector3 newPosition = new Vector3(transform.position.x + pinRow -1, transform.position.y + pinCollum -1, transform.position.z);
+
+         int random = Random.Range(0, pinPrefabs.Length);
+
+         if(i == pinRow)
+         {
+         var cell = Instantiate(pinPrefabs[random], newPosition, transform.rotation, parentObject);
+         
+         EditorUtility.SetDirty(cell);
+         }
+         pinCounter ++;
+         
+        }
+    }
+    [ContextMenu("Tools / Add All Pins")]
+    void AddAllPins()
+     {
+>>>>>>> 5406889d384c393a6582973f665cc14d22bdec05
       pins = new int [rows,collums];
       pinsObjects = new GameObject [rows * collums];
 
@@ -106,7 +145,10 @@ public class PinsCreator : MonoBehaviour
          var cell = Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
          pinsObjects[i] = parentObject.transform.GetChild(i).gameObject;
          
+<<<<<<< HEAD
          
+=======
+>>>>>>> 5406889d384c393a6582973f665cc14d22bdec05
          pinCounter ++;
          offsetx++;
          
@@ -126,4 +168,9 @@ public class PinsCreator : MonoBehaviour
       DeletePins();
       AddAllPins();
     }
+<<<<<<< HEAD
 }
+=======
+}
+
+>>>>>>> 5406889d384c393a6582973f665cc14d22bdec05
