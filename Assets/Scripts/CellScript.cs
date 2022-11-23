@@ -4,41 +4,48 @@ using UnityEngine;
 
 public class CellScript : MonoBehaviour
 {
-    [SerializeField] private bool isFull;
+    public bool isFull;
+    [SerializeField] private int myCount;
+    [SerializeField] private int pinsOnSceneCounter;
     [SerializeField] private Vector3 cellPSN;
-    [SerializeField] private PinsCreator pins; 
+    [SerializeField] private Vector3 pinPSN;
+    [SerializeField] private PinsCreator pinsCreatorScript;
+    [SerializeField] private CellCreator cellCreatorScript;
     [SerializeField] private  GameObject pinn; 
     
     void Awake()
     {
         cellPSN = transform.position;
         pinn = GameObject.Find("Pins");
-        pins = pinn.GetComponent<PinsCreator>();
+        pinsCreatorScript = pinn.GetComponent<PinsCreator>();
+        isFull = false;
     }
     void Update()
     {
-        if(pins.isPinsOnscene == true)
-        {
+     SearchForSamePSN();
         
-         if(pins.pinsObjects.Length > 0)
-         {
-          for (int i=0; i < pins.pinsObjects.Length; i++)
+    }
+   void SearchForSamePSN()
+   {
+    for (int i=0; i < pinsCreatorScript.pinsObjects.Length; i++)
           {
-            if(pins.pinsObjects[i] != null)
+            if(pinsCreatorScript.pinsObjects[i] != null)
             {
-            
-             if (cellPSN == pins.pinsObjects[i].transform.position)
+              
+            pinPSN = pinsCreatorScript.pinsObjects[i].transform.position;
+            pinsOnSceneCounter++;
+             if (cellPSN == pinPSN)
              {
+              pinsOnSceneCounter = 0;
               isFull = true;
              }
-             else
+             if (pinsOnSceneCounter >= pinsCreatorScript.pinsObjects.Length)
              {
-             isFull = false;
+              isFull = false;
              }
            }
           }
-         }
-        }
-        
-    }
+    
+   }
 }
+
