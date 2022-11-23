@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 780096134716167653}
   - component: {fileID: 780096134716167652}
   - component: {fileID: 780096134716167658}
-  - component: {fileID: 2640998264922209486}
+  - component: {fileID: -395779872323771225}
   m_Layer: 0
   m_Name: Octopus (Pink)
   m_TagString: Untagged
@@ -103,7 +103,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2640998264922209486
+--- !u!114 &-395779872323771225
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,11 +112,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 780096134716167655}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4161c5fef42ce504cb6d62bdd524fae4, type: 3}
+  m_Script: {fileID: 11500000, guid: cd28c0926e751a74784eceee64bd716b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -1
-  imIn: 0
+  speed: 0
+  myRow: 0
+  myCount: 0
   pinPSN: {x: 0, y: 0, z: 0}
-  pins: {fileID: 0}
-  cell: {fileID: 0}
+  cellPSN: {x: 0, y: 0, z: 0}
+  targetCell: {x: 0, y: 0, z: 0}
+  cellCreatorScript: {fileID: 0}
+  cellCreatorGM: {fileID: 0}
+  pinsCreatorScript: {fileID: 0}
+  pinsCreatorGM: {fileID: 0}

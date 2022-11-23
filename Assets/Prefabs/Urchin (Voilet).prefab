@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 994322843064576603}
   - component: {fileID: 994322843064576600}
   - component: {fileID: 994322843064576602}
-  - component: {fileID: 1399249826264883101}
+  - component: {fileID: 952060014783746820}
   m_Layer: 0
   m_Name: Urchin (Voilet)
   m_TagString: Untagged
@@ -103,7 +103,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1399249826264883101
+--- !u!114 &952060014783746820
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,11 +112,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 994322843064576601}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4161c5fef42ce504cb6d62bdd524fae4, type: 3}
+  m_Script: {fileID: 11500000, guid: cd28c0926e751a74784eceee64bd716b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: -1
-  imIn: 0
+  speed: 0
+  myRow: 0
+  myCount: 0
   pinPSN: {x: 0, y: 0, z: 0}
-  pins: {fileID: 0}
-  cell: {fileID: 0}
+  cellPSN: {x: 0, y: 0, z: 0}
+  targetCell: {x: 0, y: 0, z: 0}
+  cellCreatorScript: {fileID: 0}
+  cellCreatorGM: {fileID: 0}
+  pinsCreatorScript: {fileID: 0}
+  pinsCreatorGM: {fileID: 0}
