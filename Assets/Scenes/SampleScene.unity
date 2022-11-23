@@ -175,6 +175,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -270,6 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -365,6 +367,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -460,6 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -555,6 +559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -774,6 +779,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -944,6 +950,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -1039,6 +1046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -1134,6 +1142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -1312,6 +1321,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -1507,6 +1517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -1702,6 +1713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -1828,6 +1840,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -1923,6 +1936,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2018,6 +2032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2113,6 +2128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2208,6 +2224,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2340,6 +2357,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2466,6 +2484,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2561,6 +2580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2656,6 +2676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2751,6 +2772,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2912,6 +2934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3007,6 +3030,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3102,6 +3126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3197,6 +3222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3292,6 +3318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3387,6 +3414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3482,6 +3510,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3591,6 +3620,34 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   pinsOnScene: []
   parentObject: {fileID: 1973341228}
 --- !u!1 &2082578619
@@ -3645,6 +3702,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3740,6 +3798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3835,6 +3894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   myCount: 0
+  pinsOnSceneCounter: 0
   cellPSN: {x: 0, y: 0, z: 0}
   pinPSN: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}

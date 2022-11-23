@@ -47,7 +47,6 @@ public class PinsCreator : MonoBehaviour
       offsety = 0;
       pinCounter = 0;
       countInArray = 0;
-      childCounter = 0;
       isPinsOnscene = false;
       }
      }
@@ -85,6 +84,7 @@ public class PinsCreator : MonoBehaviour
         }
         pinCounter = 0;
         countInArray = 0;
+        childCounter = 0;
         offsetx = 0;
         offsety = 0;  
     }

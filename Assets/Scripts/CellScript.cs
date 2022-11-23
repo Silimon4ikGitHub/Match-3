@@ -6,6 +6,7 @@ public class CellScript : MonoBehaviour
 {
     public bool isFull;
     [SerializeField] private int myCount;
+    [SerializeField] private int pinsOnSceneCounter;
     [SerializeField] private Vector3 cellPSN;
     [SerializeField] private Vector3 pinPSN;
     [SerializeField] private PinsCreator pinsCreatorScript;
@@ -32,12 +33,18 @@ public class CellScript : MonoBehaviour
             {
               
             pinPSN = pinsCreatorScript.pinsObjects[i].transform.position;
+            pinsOnSceneCounter++;
              if (cellPSN == pinPSN)
              {
+              pinsOnSceneCounter = 0;
               isFull = true;
-              Debug.Log("TRUE!");
+             }
+             if (pinsOnSceneCounter >= pinsCreatorScript.pinsObjects.Length)
+             {
+              isFull = false;
              }
            }
           }
+    
    }
 }
