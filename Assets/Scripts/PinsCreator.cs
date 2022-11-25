@@ -9,26 +9,26 @@ using UnityEditor;
 public class PinsCreator : MonoBehaviour
 {
     [Header ("Put Cell Detailes")]
-    [SerializeField] private  int rows;
-    [SerializeField] private  int collums;
+    public  int rows;
+    public  int collums;
 
     [Header ("Put Pin Position")]
     [SerializeField] private  int pinRow;
     [SerializeField] private  int pinCollum;
+
+    [Header ("Public variables")]
+    public int countInArray;
+    public  bool isPinsOnscene = false;
     private int[,] pins;
     private  int offsetx;
     private  int offsety;
     private  int pinCounter;
-    public int countInArray;
-    [SerializeField] private int childCounter;
-    
-    public  bool isPinsOnscene = false;
+
 
     [Header ("Objects")]
     [SerializeField] private  GameObject[] pinPrefabs;
-    public  GameObject[] pinsObjects;
-    public  GameObject[] pinsOnScene;
     [SerializeField] private  Transform parentObject;
+    public  GameObject[] pinsObjects;
 
      public  void NextRow()
         {
@@ -42,7 +42,9 @@ public class PinsCreator : MonoBehaviour
      {
       while (transform.childCount > 0)
       {
+      //======= DESTROY GAMEOBJECTS =======
       DestroyImmediate(transform.GetChild(0).gameObject);
+      // ====== REFRESH ALL COUNTERS ======
       offsetx = 0;
       offsety = 0;
       pinCounter = 0;
@@ -56,23 +58,25 @@ public class PinsCreator : MonoBehaviour
      {
       isPinsOnscene = true;
       pins = new int [rows,collums];
-      
 
         for (int i=0; i < pins.Length; i++)
         {
+          //======= MADE FIELD FOR INSTANTIATE =======
          Vector3 pinPosition = new Vector3(transform.position.x + offsetx, transform.position.y + offsety, transform.position.z);
          countInArray++;
          int random = Random.Range(0, pinPrefabs.Length);
+         
+         //======= INSANTIATE PINS IN PUTTED PSN =======
          if(i > pins.Length - rows - 1)
          {
-         
          var cell = Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
-         pinsObjects[i] = parentObject.transform.GetChild(childCounter).gameObject;
-         childCounter++;
          EditorUtility.SetDirty(cell);
          }
-         else pinsObjects[i] = null;
-        
+         else
+         {
+          pinsObjects[i] = null;
+         }
+
          pinCounter ++;
          offsetx++;
          
@@ -84,7 +88,6 @@ public class PinsCreator : MonoBehaviour
         }
         pinCounter = 0;
         countInArray = 0;
-        childCounter = 0;
         offsetx = 0;
         offsety = 0;  
     }
@@ -105,7 +108,6 @@ public class PinsCreator : MonoBehaviour
          int random = Random.Range(0, pinPrefabs.Length);
          var cell = Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
          pinsObjects[i] = parentObject.transform.GetChild(i).gameObject;
-         
          
          pinCounter ++;
          offsetx++;

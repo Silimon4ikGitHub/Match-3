@@ -10,7 +10,6 @@ public class CellScript : MonoBehaviour
     [SerializeField] private Vector3 cellPSN;
     [SerializeField] private Vector3 pinPSN;
     [SerializeField] private PinsCreator pinsCreatorScript;
-    [SerializeField] private CellCreator cellCreatorScript;
     [SerializeField] private  GameObject pinn; 
     
     void Awake()
@@ -26,6 +25,7 @@ public class CellScript : MonoBehaviour
         
     }
    void SearchForSamePSN()
+   // =======SCRIPT SEARCH SAME PSN IN ARRAY OF pinsObjects[]========
    {
     for (int i=0; i < pinsCreatorScript.pinsObjects.Length; i++)
           {

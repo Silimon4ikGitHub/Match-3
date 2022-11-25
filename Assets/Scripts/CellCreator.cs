@@ -18,13 +18,9 @@ public class CellCreator : MonoBehaviour
     [SerializeField] private  int cellCounter;
 
     [Header ("Objects")]
-    [SerializeField] private  GameObject[] pinPrefabs;
     [SerializeField] private  GameObject cellPrefab;
-
-        public  GameObject[] cellsObjects;
-
     [SerializeField] private  Transform parentObject;
-
+    public  GameObject[] cellsObjects;
     public GameObject CellPrefab { get => cellPrefab; set => cellPrefab = value; }
 
     [ContextMenu("Tools / AddCells")]
@@ -39,7 +35,8 @@ public class CellCreator : MonoBehaviour
         {
          Vector3 pinPosition = new Vector3(transform.position.x + offsetx, transform.position.y + offsety, transform.position.z);
          var cell = Instantiate( CellPrefab, pinPosition, transform.rotation, parentObject);
-         cellsObjects[i] = parentObject.transform.GetChild(i).gameObject; // Input Pins in Array
+         cellsObjects[i] = parentObject.transform.GetChild(i).gameObject;
+
          cellCounter ++;
          offsetx++;
         
@@ -71,7 +68,7 @@ public class CellCreator : MonoBehaviour
       cellCounter = 0;
       }
      }
-
+    //========ITS NOT MY;)========
     public override bool Equals(object obj)
     {
         return obj is CellCreator creator &&
