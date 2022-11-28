@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PinScriptNew : MonoBehaviour
 {
-    [SerializeField] private float speed = 0.02f;
+    [SerializeField] const float normalSpeed = 0.02f;
+    [SerializeField] private float currentSpeed;
 
     [Header("For Check Only")]
     [SerializeField] private int myPSNinArray;
@@ -15,18 +16,18 @@ public class PinScriptNew : MonoBehaviour
     [SerializeField] private CellScript nextCell;
     [SerializeField] private CellScript currentCell;
     [SerializeField] private PinsCreator pinsCreatorScript;
-    [SerializeField] private GameObject cellCreatorGM;
-    [SerializeField] private GameObject pinsCreatorGM;
+    [SerializeField] private GameObject cellCreatorGO;
+    [SerializeField] private GameObject pinsCreatorGO;
 
 
 
     private void Awake()
     {
-        cellCreatorGM = GameObject.Find("Cells"); // Bad practice to use Find, add Cells throw inspector
-        cellCreatorScript = cellCreatorGM.GetComponent<CellCreator>();
+        cellCreatorGO = GameObject.Find("Cells"); // Bad practice to use Find, add Cells throw inspector
+        cellCreatorScript = cellCreatorGO.GetComponent<CellCreator>();
 
-        pinsCreatorGM = GameObject.Find("Pins");
-        pinsCreatorScript = pinsCreatorGM.GetComponent<PinsCreator>();
+        pinsCreatorGO = GameObject.Find("Pins");
+        pinsCreatorScript = pinsCreatorGO.GetComponent<PinsCreator>();
 
         myPSNinArray = pinsCreatorScript.countInArray - 1;
     }
@@ -38,12 +39,12 @@ public class PinScriptNew : MonoBehaviour
         pinsCreatorScript.pinsObjects[myPSNinArray] = transform.gameObject;
         currentCell = cellCreatorScript.cellsObjects[myPSNinArray].GetComponent<CellScript>();
 
-        GoToCell();
+        MoveToNextCell();
 
         CheckNextCell();
 
     }
-    void GoToCell()
+    void MoveToNextCell()
     {
         // Why I need this comment? Why may I just name this method "MoveToNextCell()" ? 
         // Also don't use magic numbers
@@ -51,15 +52,14 @@ public class PinScriptNew : MonoBehaviour
         // Or if you use Inspector, don't stop falling throw speed
         // use private bool _isPlay or _isStoped
 
-        //======PIN GOIND IN DIRRECTION OF targetCell======
-        speed = 0.02f;
+        currentSpeed = normalSpeed;
         targetCell = cellCreatorScript.cellsObjects[myPSNinArray].transform.position;
-        transform.position = Vector3.MoveTowards(transform.position, targetCell, speed);
+        transform.position = Vector3.MoveTowards(transform.position, targetCell, currentSpeed);
     }
 
     void Stop()
     {
-        speed = 0;
+        currentSpeed = 0;
     }
     void CheckNextCell()
     {
