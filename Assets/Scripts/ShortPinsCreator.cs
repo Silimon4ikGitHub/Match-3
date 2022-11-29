@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 using UnityEditor;
 
 
-public class PinsCreator : MonoBehaviour
+public class ShortPinsCreator : MonoBehaviour
 {
     [Header ("Put Cell Detailes")]
     public  int rows;
@@ -28,12 +28,31 @@ public class PinsCreator : MonoBehaviour
     [Header ("Objects")]
     [SerializeField] private  GameObject[] pinPrefabs;
     [SerializeField] private  Transform parentObject;
-    [SerializeField] private  PinScriptNew[] randomPinPrefab;
-    [SerializeField] private  ShortPinScript shortPinScript;
+    [SerializeField] private  ShortPinScript[] randomPinPrefab;
+    [SerializeField] private  CellCreator cellCreatorScript;
     [SerializeField] private  ShortPinScript myPinScript;
     public  GameObject[] pinsObjects;
 
+    void FixedUpdate()
+     {
+        
+       for (int i=0; i<pinsObjects.Length; i++)
+       {
+        
+        
+        if(pinsObjects[i] != null)
+        {
+          
+          
+          var myArrayIndex = pinsObjects[i].GetComponent<ShortPinScript>().myArrayIndex;
+          pinsObjects[myArrayIndex] = pinsObjects[i];
+          
+        }
+        
 
+       }
+
+      }
      public  void NextRow()
         {
             offsetx = 0;
@@ -69,12 +88,12 @@ public class PinsCreator : MonoBehaviour
          
          if(i > pins.Length - rows - 1)
          {
-         var pin = Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
+         var pin = Instantiate(randomPinPrefab[random], pinPosition, transform.rotation, parentObject);
+         myPinScript = pin.GetComponent<ShortPinScript>();
+         myPinScript.Init(rows, countInArray, transform.gameObject);
+         pinsObjects[i] = pin.gameObject;
          }
-         else
-         {
-          pinsObjects[i] = null;
-         }
+         
 
          pinCounter ++;
          offsetx++;

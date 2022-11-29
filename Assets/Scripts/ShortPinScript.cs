@@ -8,22 +8,22 @@ public class ShortPinScript : MonoBehaviour
     [SerializeField] private float currentSpeed;
 
     [Header("For Check Only")]
-    [SerializeField] private int myArrayIndex;
+    public int myArrayIndex;
     [SerializeField] private int rows;
     [SerializeField] private bool IsLocationInField(int rowIndex) => myArrayIndex >= pinsCreatorScript.rows;
     [SerializeField] private Vector3 pinPosition;
     [SerializeField] private Vector3 cellPosition;
     [SerializeField] private Vector3 targetCell;
     [SerializeField] private CellCreator cellCreatorScript;
-    [SerializeField] private CellScript nextCell;
-    [SerializeField] private CellScript currentCell;
+    [SerializeField] private ShortCellScript nextCell;
+    [SerializeField] private ShortCellScript currentCell;
     [SerializeField] private PinsCreator pinsCreatorScript;
     [SerializeField] private GameObject cellCreatorGO;
     [SerializeField] private GameObject pinsCreatorGO;
     
     public void Init(int _rows,int _myArrayIndex, GameObject _pinsObjects )
     {
-        myArrayIndex = _myArrayIndex;
+        myArrayIndex = _myArrayIndex - 1;
         rows = _rows;
         _pinsObjects = transform.gameObject;
 
@@ -33,33 +33,43 @@ public class ShortPinScript : MonoBehaviour
         cellCreatorGO = GameObject.Find("Cells");
         cellCreatorScript = cellCreatorGO.GetComponent<CellCreator>();
 
+        currentSpeed = normalSpeed;
+
     }
     void FixedUpdate()
     {
         pinPosition = transform.position;
         cellPosition = cellCreatorScript.cellsObjects[myArrayIndex].transform.position;
 
-        pinsCreatorScript.pinsObjects[myArrayIndex] = transform.gameObject;
-        currentCell = cellCreatorScript.cellsObjects[myArrayIndex].GetComponent<CellScript>();
-
         MoveToNextCell();
-
-        CheckNextCell();
-
+        if(myArrayIndex >= rows)
+        {
+            nextCell = cellCreatorScript.cellsObjects[myArrayIndex - rows].GetComponent<ShortCellScript>();
+          if (pinPosition == cellPosition)
+          { 
+            if (nextCell.isFull == false)
+            {
+                Debug.Log("Here iS Working!!!");
+                myArrayIndex = myArrayIndex - rows;
+            }
+            
+          }
+        }
     }
     void MoveToNextCell()
     {
-        currentSpeed = normalSpeed;
-        targetCell = cellCreatorScript.cellsObjects[myArrayIndex].transform.position;
+        
+        targetCell = cellPosition;
         transform.position = Vector3.MoveTowards(transform.position, targetCell, currentSpeed);
+        
     }
 
     void CheckNextCell()
     {
 
-        if (IsLocationInField(pinsCreatorScript.rows))
+        if (IsLocationInField(rows))
         {
-            nextCell = cellCreatorScript.cellsObjects[myArrayIndex - pinsCreatorScript.rows].GetComponent<CellScript>();
+            nextCell = cellCreatorScript.cellsObjects[myArrayIndex - rows].GetComponent<ShortCellScript>();
 
             if (pinPosition == cellPosition) 
             {
@@ -67,7 +77,7 @@ public class ShortPinScript : MonoBehaviour
 
                 if (!nextCell.isFull)
                 {
-                    myArrayIndex = myArrayIndex - pinsCreatorScript.rows;
+                    myArrayIndex = myArrayIndex - rows;
                 }
             }
         }
