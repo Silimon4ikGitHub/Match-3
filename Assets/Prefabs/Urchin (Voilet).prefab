@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 994322843064576600}
   - component: {fileID: 994322843064576602}
   - component: {fileID: 952060014783746820}
+  - component: {fileID: -5778454070245272668}
   m_Layer: 0
   m_Name: Urchin (Voilet)
   m_TagString: Untagged
@@ -110,18 +111,31 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 994322843064576601}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd28c0926e751a74784eceee64bd716b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  myRow: 0
-  myCount: 0
-  pinPSN: {x: 0, y: 0, z: 0}
-  cellPSN: {x: 0, y: 0, z: 0}
+  currentSpeed: 0
+  myArrayIndex: 0
+  pinPosition: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
   targetCell: {x: 0, y: 0, z: 0}
   cellCreatorScript: {fileID: 0}
-  cellCreatorGM: {fileID: 0}
+  nextCell: {fileID: 0}
+  currentCell: {fileID: 0}
   pinsCreatorScript: {fileID: 0}
-  pinsCreatorGM: {fileID: 0}
+  cellCreatorGO: {fileID: 0}
+  pinsCreatorGO: {fileID: 0}
+--- !u!114 &-5778454070245272668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994322843064576601}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62a7724efd79194b854d815d6939b6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

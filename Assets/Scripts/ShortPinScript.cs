@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PinScriptNew : MonoBehaviour
+public class ShortPinScript : MonoBehaviour
 {
     [SerializeField] const float normalSpeed = 0.02f;
     [SerializeField] private float currentSpeed;
 
     [Header("For Check Only")]
     [SerializeField] private int myArrayIndex;
+    [SerializeField] private int rows;
     [SerializeField] private bool IsLocationInField(int rowIndex) => myArrayIndex >= pinsCreatorScript.rows;
     [SerializeField] private Vector3 pinPosition;
     [SerializeField] private Vector3 cellPosition;
@@ -19,18 +20,19 @@ public class PinScriptNew : MonoBehaviour
     [SerializeField] private PinsCreator pinsCreatorScript;
     [SerializeField] private GameObject cellCreatorGO;
     [SerializeField] private GameObject pinsCreatorGO;
+    
+    public void Init(int _rows,int _myArrayIndex, GameObject _pinsObjects )
+    {
+        myArrayIndex = _myArrayIndex;
+        rows = _rows;
+        _pinsObjects = transform.gameObject;
 
-
-
+    }
     private void Awake()
     {
         cellCreatorGO = GameObject.Find("Cells");
         cellCreatorScript = cellCreatorGO.GetComponent<CellCreator>();
 
-        pinsCreatorGO = GameObject.Find("Pins");
-        pinsCreatorScript = pinsCreatorGO.GetComponent<PinsCreator>();
-
-        myArrayIndex = pinsCreatorScript.countInArray - 1;
     }
     void FixedUpdate()
     {
@@ -70,47 +72,4 @@ public class PinScriptNew : MonoBehaviour
             }
         }
     }
-
-    //** private bool IsLocationInField(int rowIndex) => myArrayIndex >= pinsCreatorScript.rows;
-    // Then you use it like that "if (IsLocationInField(currentRowIndex))"
-
-    // Also you can simplifie your code:
-    //
-    //    if (myArrayIndex >= pinsCreatorScript.rows)
-    //        if (pinPosition == cellPosition)
-    //            if (!nextCell.isFull)
-    //            {
-    //                nextCell = cellCreatorScript.cellsObjects[myArrayIndex - pinsCreatorScript.rows].GetComponent<CellScript>();
-    //                pinsCreatorScript.pinsObjects[myArrayIndex] = transform.gameObject;
-    //                myArrayIndex = myArrayIndex - pinsCreatorScript.rows;
-    //            }
-    //
-    // Or:
-    //
-    //    if (myArrayIndex <= pinsCreatorScript.rows)
-    //        return;
-    //    if (pinPosition != cellPosition)
-    //        return;
-    //
-    //    if (!nextCell.isFull)
-    //    {
-    //        nextCell = cellCreatorScript.cellsObjects[myArrayIndex - pinsCreatorScript.rows].GetComponent<CellScript>();
-    //        pinsCreatorScript.pinsObjects[myArrayIndex] = transform.gameObject;
-    //        myArrayIndex = myArrayIndex - pinsCreatorScript.rows;
-    //    }
-    //
-    // The best way:
-    //
-    //
-    //    if (!IsLocationInField(currentRowIndex) || !IsInsideOfCell())
-    //        return;
-    //
-    //    if (!nextCell.isFull)
-    //    {
-    //        nextCell = cellCreatorScript.cellsObjects[myPSNinArray - pinsCreatorScript.rows].GetComponent<CellScript>();
-    //        pinsCreatorScript.pinsObjects[myPSNinArray] = transform.gameObject;
-    //        myPSNinArray = myPSNinArray - pinsCreatorScript.rows;
-    //    }
-    //
-    // Is it shorter and cleaner?)
 }

@@ -176,8 +176,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &16315939
@@ -271,8 +271,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &18163109
@@ -366,8 +366,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &75756191
@@ -461,8 +461,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &93202176
@@ -674,8 +674,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &212886227
@@ -769,8 +769,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &306408309
@@ -1022,8 +1022,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &526945758
@@ -1317,8 +1317,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &665843438
@@ -1412,8 +1412,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &727437420
@@ -1538,8 +1538,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &864209635
@@ -1633,8 +1633,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &977054223
@@ -1765,8 +1765,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1102022837
@@ -1860,8 +1860,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1104332256
@@ -1955,8 +1955,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1120208265
@@ -2050,8 +2050,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1148578185
@@ -2145,8 +2145,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1149861331
@@ -2240,8 +2240,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1191977505
@@ -2335,8 +2335,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1193187136
@@ -2461,8 +2461,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1289506107
@@ -2556,8 +2556,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1358113303
@@ -2651,8 +2651,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1476932059
@@ -2746,8 +2746,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1497696716
@@ -2841,8 +2841,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1521931877
@@ -2936,8 +2936,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1534335846
@@ -3097,8 +3097,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1650060801
@@ -3192,8 +3192,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1693106301
@@ -3287,8 +3287,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1762928772
@@ -3382,8 +3382,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1772958031
@@ -3477,8 +3477,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1852348053
@@ -3572,8 +3572,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1873162915
@@ -3667,8 +3667,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &1900913406
@@ -3770,6 +3770,14 @@ MonoBehaviour:
   - {fileID: 957139927803927288, guid: 827579c180424494ea548f996d8a6aef, type: 3}
   - {fileID: 994322843064576601, guid: 7958053eb060c4f4ab060c918a9729f9, type: 3}
   parentObject: {fileID: 1973341228}
+  randomPinPrefab:
+  - {fileID: -2216504606560744464, guid: ffeb971bc96de5146be3d50a8646313d, type: 3}
+  - {fileID: -4339192216468305029, guid: defa80ae367d40b418e681c0caf04879, type: 3}
+  - {fileID: -395779872323771225, guid: 9d04551f4e00d584f821d240c8a9f879, type: 3}
+  - {fileID: 5056147306067478913, guid: 827579c180424494ea548f996d8a6aef, type: 3}
+  - {fileID: 952060014783746820, guid: 7958053eb060c4f4ab060c918a9729f9, type: 3}
+  shortPinScript: {fileID: 0}
+  myPinScript: {fileID: 0}
   pinsObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -3856,8 +3864,8 @@ MonoBehaviour:
   isFull: 0
   myCount: 0
   pinsOnSceneCounter: 0
-  cellPSN: {x: 0, y: 0, z: 0}
-  pinPSN: {x: 0, y: 0, z: 0}
+  cellPosition: {x: 0, y: 0, z: 0}
+  pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
   pinn: {fileID: 0}
 --- !u!114 &2096649337

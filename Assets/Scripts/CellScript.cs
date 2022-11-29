@@ -7,14 +7,14 @@ public class CellScript : MonoBehaviour
     public bool isFull;
     [SerializeField] private int myCount;
     [SerializeField] private int pinsOnSceneCounter;
-    [SerializeField] private Vector3 cellPSN;
-    [SerializeField] private Vector3 pinPSN;
+    [SerializeField] private Vector3 cellPosition;
+    [SerializeField] private Vector3 pinPosition;
     [SerializeField] private PinsCreator pinsCreatorScript;
     [SerializeField] private  GameObject pinn; 
     
     void Awake()
     {
-        cellPSN = transform.position;
+        cellPosition = transform.position;
         pinn = GameObject.Find("Pins");
         pinsCreatorScript = pinn.GetComponent<PinsCreator>();
         isFull = false;
@@ -25,16 +25,15 @@ public class CellScript : MonoBehaviour
         
     }
    void SearchForSamePSN()
-   // =======SCRIPT SEARCH SAME PSN IN ARRAY OF pinsObjects[]========
    {
     for (int i=0; i < pinsCreatorScript.pinsObjects.Length; i++)
           {
             if(pinsCreatorScript.pinsObjects[i] != null)
             {
               
-            pinPSN = pinsCreatorScript.pinsObjects[i].transform.position;
+            pinPosition = pinsCreatorScript.pinsObjects[i].transform.position;
             pinsOnSceneCounter++;
-             if (cellPSN == pinPSN)
+             if (cellPosition == pinPosition)
              {
               pinsOnSceneCounter = 0;
               isFull = true;

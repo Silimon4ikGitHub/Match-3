@@ -28,8 +28,16 @@ public class PinsCreator : MonoBehaviour
     [Header ("Objects")]
     [SerializeField] private  GameObject[] pinPrefabs;
     [SerializeField] private  Transform parentObject;
+    [SerializeField] private  PinScriptNew[] randomPinPrefab;
+    [SerializeField] private  ShortPinScript shortPinScript;
+    [SerializeField] private  ShortPinScript myPinScript;
     public  GameObject[] pinsObjects;
 
+    void FixedUpdate()
+      {
+      
+
+      }
      public  void NextRow()
         {
             offsetx = 0;
@@ -42,9 +50,7 @@ public class PinsCreator : MonoBehaviour
      {
       while (transform.childCount > 0)
       {
-      //======= DESTROY GAMEOBJECTS =======
       DestroyImmediate(transform.GetChild(0).gameObject);
-      // ====== REFRESH ALL COUNTERS ======
       offsetx = 0;
       offsety = 0;
       pinCounter = 0;
@@ -61,16 +67,16 @@ public class PinsCreator : MonoBehaviour
 
         for (int i=0; i < pins.Length; i++)
         {
-          //======= MADE FIELD FOR INSTANTIATE =======
          Vector3 pinPosition = new Vector3(transform.position.x + offsetx, transform.position.y + offsety, transform.position.z);
          countInArray++;
          int random = Random.Range(0, pinPrefabs.Length);
          
-         //======= INSANTIATE PINS IN PUTTED PSN =======
          if(i > pins.Length - rows - 1)
          {
-         var cell = Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
-         EditorUtility.SetDirty(cell);
+         //var cell = Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
+         var pin = Instantiate(randomPinPrefab[random], pinPosition, transform.rotation, parentObject);
+         myPinScript = pin.GetComponent<ShortPinScript>();
+         myPinScript.Init(rows, countInArray, transform.gameObject);
          }
          else
          {

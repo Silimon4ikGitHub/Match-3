@@ -68,6 +68,7 @@ public class CellCreator : MonoBehaviour
       cellCounter = 0;
       }
      }
+     
     //========ITS NOT MY;)========
     public override bool Equals(object obj)
     {
