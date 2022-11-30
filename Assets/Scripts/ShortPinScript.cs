@@ -8,7 +8,7 @@ public class ShortPinScript : MonoBehaviour
     [SerializeField] private float currentSpeed;
 
     [Header("For Check Only")]
-    public int myArrayIndex;
+    
     [SerializeField] private int rows;
     [SerializeField] private bool IsLocationInField(int rowIndex) => myArrayIndex >= pinsCreatorScript.rows;
     [SerializeField] private Vector3 pinPosition;
@@ -16,10 +16,9 @@ public class ShortPinScript : MonoBehaviour
     [SerializeField] private Vector3 targetCell;
     [SerializeField] private CellCreator cellCreatorScript;
     [SerializeField] private ShortCellScript nextCell;
-    [SerializeField] private ShortCellScript currentCell;
     [SerializeField] private PinsCreator pinsCreatorScript;
     [SerializeField] private GameObject cellCreatorGO;
-    [SerializeField] private GameObject pinsCreatorGO;
+    public int myArrayIndex;
     
     public void Init(int _rows,int _myArrayIndex, GameObject _pinsObjects )
     {
@@ -34,7 +33,6 @@ public class ShortPinScript : MonoBehaviour
         cellCreatorScript = cellCreatorGO.GetComponent<CellCreator>();
 
         currentSpeed = normalSpeed;
-
     }
     void FixedUpdate()
     {
@@ -42,6 +40,17 @@ public class ShortPinScript : MonoBehaviour
         cellPosition = cellCreatorScript.cellsObjects[myArrayIndex].transform.position;
 
         MoveToNextCell();
+        CheckNextCell();
+    }
+    void MoveToNextCell()
+    {
+        targetCell = cellPosition;
+        transform.position = Vector3.MoveTowards(transform.position, targetCell, currentSpeed);
+    }
+
+    void CheckNextCell()
+    {
+
         if(myArrayIndex >= rows)
         {
             nextCell = cellCreatorScript.cellsObjects[myArrayIndex - rows].GetComponent<ShortCellScript>();
@@ -54,32 +63,6 @@ public class ShortPinScript : MonoBehaviour
             }
             
           }
-        }
-    }
-    void MoveToNextCell()
-    {
-        
-        targetCell = cellPosition;
-        transform.position = Vector3.MoveTowards(transform.position, targetCell, currentSpeed);
-        
-    }
-
-    void CheckNextCell()
-    {
-
-        if (IsLocationInField(rows))
-        {
-            nextCell = cellCreatorScript.cellsObjects[myArrayIndex - rows].GetComponent<ShortCellScript>();
-
-            if (pinPosition == cellPosition) 
-            {
-                pinsCreatorScript.pinsObjects[myArrayIndex] = transform.gameObject;
-
-                if (!nextCell.isFull)
-                {
-                    myArrayIndex = myArrayIndex - rows;
-                }
-            }
         }
     }
 }

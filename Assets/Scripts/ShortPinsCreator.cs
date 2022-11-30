@@ -29,29 +29,20 @@ public class ShortPinsCreator : MonoBehaviour
     [SerializeField] private  GameObject[] pinPrefabs;
     [SerializeField] private  Transform parentObject;
     [SerializeField] private  ShortPinScript[] randomPinPrefab;
-    [SerializeField] private  CellCreator cellCreatorScript;
     [SerializeField] private  ShortPinScript myPinScript;
     public  GameObject[] pinsObjects;
 
     void FixedUpdate()
      {
-        
        for (int i=0; i<pinsObjects.Length; i++)
        {
         
-        
         if(pinsObjects[i] != null)
         {
-          
-          
           var myArrayIndex = pinsObjects[i].GetComponent<ShortPinScript>().myArrayIndex;
           pinsObjects[myArrayIndex] = pinsObjects[i];
-          
         }
-        
-
        }
-
       }
      public  void NextRow()
         {
@@ -94,7 +85,6 @@ public class ShortPinsCreator : MonoBehaviour
          pinsObjects[i] = pin.gameObject;
          }
          
-
          pinCounter ++;
          offsetx++;
          
