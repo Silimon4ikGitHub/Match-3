@@ -157,6 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -270,6 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -383,6 +385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -614,6 +617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -727,6 +731,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -840,6 +845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -953,6 +959,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -1141,6 +1148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -1537,6 +1545,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -1650,6 +1659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -1794,6 +1804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -1907,6 +1918,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2020,6 +2032,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2133,6 +2146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2246,6 +2260,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2396,6 +2411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2509,6 +2525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2622,6 +2639,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2735,6 +2753,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2848,6 +2867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -2961,6 +2981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3105,6 +3126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3218,6 +3240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3331,6 +3354,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3444,6 +3468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3557,6 +3582,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3736,6 +3762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3849,6 +3876,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -3962,6 +3990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -4075,6 +4104,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -4273,23 +4303,10 @@ MonoBehaviour:
   collums: 8
   pinRow: 4
   pinCollum: 8
-  countInArray: 0
+  arrayIndex: 0
   isPinsOnscene: 0
-  pinPrefabs:
-  - {fileID: 6188955062414161816, guid: ffeb971bc96de5146be3d50a8646313d, type: 3}
-  - {fileID: 1788925462504541106, guid: defa80ae367d40b418e681c0caf04879, type: 3}
-  - {fileID: 780096134716167655, guid: 9d04551f4e00d584f821d240c8a9f879, type: 3}
-  - {fileID: 957139927803927288, guid: 827579c180424494ea548f996d8a6aef, type: 3}
-  - {fileID: 994322843064576601, guid: 7958053eb060c4f4ab060c918a9729f9, type: 3}
-  parentObject: {fileID: 1973341228}
-  randomPinPrefab:
-  - {fileID: 7248457568938534518, guid: ffeb971bc96de5146be3d50a8646313d, type: 3}
-  - {fileID: 7029107972674823298, guid: defa80ae367d40b418e681c0caf04879, type: 3}
-  - {fileID: 8629350181275031817, guid: 9d04551f4e00d584f821d240c8a9f879, type: 3}
-  - {fileID: 6730386195805879654, guid: 827579c180424494ea548f996d8a6aef, type: 3}
-  - {fileID: -5778454070245272668, guid: 7958053eb060c4f4ab060c918a9729f9, type: 3}
-  cellCreatorScript: {fileID: 209965279}
-  myPinScript: {fileID: 0}
+  pinCreationColldown: 100
+  pinCreationTimer: 0
   pinsObjects:
   - {fileID: 0}
   - {fileID: 0}
@@ -4323,6 +4340,21 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  pinPrefabs:
+  - {fileID: 6188955062414161816, guid: ffeb971bc96de5146be3d50a8646313d, type: 3}
+  - {fileID: 1788925462504541106, guid: defa80ae367d40b418e681c0caf04879, type: 3}
+  - {fileID: 780096134716167655, guid: 9d04551f4e00d584f821d240c8a9f879, type: 3}
+  - {fileID: 957139927803927288, guid: 827579c180424494ea548f996d8a6aef, type: 3}
+  - {fileID: 994322843064576601, guid: 7958053eb060c4f4ab060c918a9729f9, type: 3}
+  parentObject: {fileID: 1973341228}
+  cellCreatorScript: {fileID: 209965279}
+  randomPinPrefab:
+  - {fileID: 7248457568938534518, guid: ffeb971bc96de5146be3d50a8646313d, type: 3}
+  - {fileID: 7029107972674823298, guid: defa80ae367d40b418e681c0caf04879, type: 3}
+  - {fileID: 8629350181275031817, guid: 9d04551f4e00d584f821d240c8a9f879, type: 3}
+  - {fileID: 6730386195805879654, guid: 827579c180424494ea548f996d8a6aef, type: 3}
+  - {fileID: -5778454070245272668, guid: 7958053eb060c4f4ab060c918a9729f9, type: 3}
+  myPinScript: {fileID: 0}
 --- !u!1 &1995388778
 GameObject:
   m_ObjectHideFlags: 0
@@ -4357,6 +4389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}
@@ -4470,6 +4503,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isFull: 0
   pinsOnSceneCounter: 0
+  maxPinCounter: 100
   cellPosition: {x: 0, y: 0, z: 0}
   pinPosition: {x: 0, y: 0, z: 0}
   pinsCreatorScript: {fileID: 0}

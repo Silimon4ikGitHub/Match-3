@@ -58,7 +58,6 @@ public class ShortPinScript : MonoBehaviour
           { 
             if (nextCell.isFull == false)
             {
-                Debug.Log("Here iS Working!!!");
                 myArrayIndex = myArrayIndex - rows;
             }
             

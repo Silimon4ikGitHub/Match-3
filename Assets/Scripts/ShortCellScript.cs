@@ -6,6 +6,7 @@ public class ShortCellScript : MonoBehaviour
 {
     public bool isFull;
     [SerializeField] private int pinsOnSceneCounter;
+    [SerializeField] private int maxPinCounter = 100;
     [SerializeField] private Vector3 cellPosition;
     [SerializeField] private Vector3 pinPosition;
     [SerializeField] private ShortPinsCreator pinsCreatorScript;
@@ -21,7 +22,7 @@ public class ShortCellScript : MonoBehaviour
     void Update()
     {
      SearchForSamePSN();
-        
+     RefreshPinCounter();
     }
    void SearchForSamePSN()
    {
@@ -45,6 +46,13 @@ public class ShortCellScript : MonoBehaviour
              }
            }
           }
-    
+   }
+   
+   void RefreshPinCounter()
+   {
+    if (pinsOnSceneCounter >= maxPinCounter)
+    {
+      pinsOnSceneCounter = 0;
+    }
    }
 }
