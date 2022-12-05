@@ -40,9 +40,12 @@ public class ShortPinsCreator : MonoBehaviour
      {
        MovingPinsInArray();
        pinCreationTimer++;
+       if (cellCreatorScript.cellsObjects[31].GetComponent<ShortCellScript>().isFull == false)
+       {
        if (pinCreationTimer > pinCreationColldown)
        {
         AddAllPins();
+       }
        }
      }
      
