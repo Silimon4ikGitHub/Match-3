@@ -4307,6 +4307,7 @@ MonoBehaviour:
   isPinsOnscene: 0
   pinCreationColldown: 100
   pinCreationTimer: 0
+  maxPinCreationTimer: 1000
   pinsObjects:
   - {fileID: 0}
   - {fileID: 0}

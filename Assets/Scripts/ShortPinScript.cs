@@ -64,4 +64,8 @@ public class ShortPinScript : MonoBehaviour
           }
         }
     }
+    void OnMouseDown()
+    {
+        Destroy(gameObject);
+    }
 }

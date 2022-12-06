@@ -42,6 +42,7 @@ public class ShortCellScript : MonoBehaviour
              }
              if (pinsOnSceneCounter >= pinsCreatorScript.pinsObjects.Length)
              {
+              
               isFull = false;
              }
            }
@@ -55,4 +56,5 @@ public class ShortCellScript : MonoBehaviour
       pinsOnSceneCounter = 0;
     }
    }
+    
 }

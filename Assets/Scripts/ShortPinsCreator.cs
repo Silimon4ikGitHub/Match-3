@@ -24,7 +24,8 @@ public class ShortPinsCreator : MonoBehaviour
     private  int offsety;
     private  int pinCounter;
     [SerializeField] private float pinCreationColldown;
-    [SerializeField] private float pinCreationTimer;
+    public float pinCreationTimer;
+    [SerializeField] private float maxPinCreationTimer;
 
 
     [Header ("Objects")]
@@ -38,15 +39,23 @@ public class ShortPinsCreator : MonoBehaviour
 
     void FixedUpdate()
      {
-       MovingPinsInArray();
        pinCreationTimer++;
-       if (cellCreatorScript.cellsObjects[31].GetComponent<ShortCellScript>().isFull == false)
+
+       MovingPinsInArray();
+
+       if (!cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 1].GetComponent<ShortCellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 2].GetComponent<ShortCellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 3].GetComponent<ShortCellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 4].GetComponent<ShortCellScript>().isFull) 
        {
-       if (pinCreationTimer > pinCreationColldown)
-       {
-        AddAllPins();
+         if (pinCreationTimer > pinCreationColldown)
+         {
+          AddAllPins();
+         }
+
        }
-       }
+       RefreshPinCreationTimer();
+       
      }
      
 
@@ -126,6 +135,7 @@ public class ShortPinsCreator : MonoBehaviour
         {
           var myArrayIndex = pinsObjects[i].GetComponent<ShortPinScript>().myArrayIndex;
           pinsObjects[myArrayIndex] = pinsObjects[i];
+          
         }
        
        }
@@ -136,4 +146,11 @@ public class ShortPinsCreator : MonoBehaviour
             offsety++;
             pinCounter = 0;
         }
+    private void RefreshPinCreationTimer()
+    {
+      if (pinCreationTimer > maxPinCreationTimer)
+      {
+        pinCreationTimer = pinCreationColldown;
+      }
+    }
 }
