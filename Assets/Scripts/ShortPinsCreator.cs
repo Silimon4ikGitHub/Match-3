@@ -46,7 +46,11 @@ public class ShortPinsCreator : MonoBehaviour
        if (!cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 1].GetComponent<ShortCellScript>().isFull &&
            !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 2].GetComponent<ShortCellScript>().isFull &&
            !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 3].GetComponent<ShortCellScript>().isFull &&
-           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 4].GetComponent<ShortCellScript>().isFull) 
+           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 4].GetComponent<ShortCellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 5].GetComponent<ShortCellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 6].GetComponent<ShortCellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 7].GetComponent<ShortCellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 8].GetComponent<ShortCellScript>().isFull) 
        {
          if (pinCreationTimer > pinCreationColldown)
          {

@@ -9,6 +9,7 @@ public class PinScriptNew : MonoBehaviour
 
     [Header("For Check Only")]
     [SerializeField] private int myArrayIndex;
+    public int myPrefabIndex;
     [SerializeField] private bool IsLocationInField(int rowIndex) => myArrayIndex >= pinsCreatorScript.rows;
     [SerializeField] private Vector3 pinPosition;
     [SerializeField] private Vector3 cellPosition;
@@ -27,7 +28,7 @@ public class PinScriptNew : MonoBehaviour
         cellCreatorGO = GameObject.Find("Cells");
         cellCreatorScript = cellCreatorGO.GetComponent<CellCreator>();
 
-        pinsCreatorGO = GameObject.Find("Pins");
+        pinsCreatorGO = GetComponentInParent<PinsCreator>().gameObject;
         pinsCreatorScript = pinsCreatorGO.GetComponent<PinsCreator>();
 
         myArrayIndex = pinsCreatorScript.countInArray - 1;
@@ -69,6 +70,10 @@ public class PinScriptNew : MonoBehaviour
                 }
             }
         }
+    }
+    void OnMouseDown()
+    {
+        Destroy(gameObject);
     }
 
     //** private bool IsLocationInField(int rowIndex) => myArrayIndex >= pinsCreatorScript.rows;

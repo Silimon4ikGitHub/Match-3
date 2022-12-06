@@ -15,6 +15,7 @@ public class PinsCreator : MonoBehaviour
     [Header ("Put Pin Position")]
     [SerializeField] private  int pinRow;
     [SerializeField] private  int pinCollum;
+    [SerializeField] private float pinCreationColldown;
 
     [Header ("Public variables")]
     public int countInArray;
@@ -23,17 +24,47 @@ public class PinsCreator : MonoBehaviour
     private  int offsetx;
     private  int offsety;
     private  int pinCounter;
+    private float pinCreationTimer;
+    private float maxPinCreationTimer = 1000;
 
 
     [Header ("Objects")]
     [SerializeField] private  GameObject[] pinPrefabs;
     [SerializeField] private  Transform parentObject;
     [SerializeField] private  PinScriptNew[] randomPinPrefab;
-    [SerializeField] private  ShortPinScript shortPinScript;
-    [SerializeField] private  ShortPinScript myPinScript;
+    [SerializeField] private  CellCreator cellCreatorScript;
     public  GameObject[] pinsObjects;
 
+    
+    private void FixedUpdate() 
+    {
+      pinCreationTimer++;
+      RefreshPinCreationTimer();
 
+    if    (!cellCreatorScript.cellsObjects[cellCreatorScript.visibleCells].GetComponent<CellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.visibleCells - 1].GetComponent<CellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.visibleCells - 2].GetComponent<CellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.visibleCells - 3].GetComponent<CellScript>().isFull)
+       {
+         AddAllPins();
+       }
+
+       for (int i=0; i < pinsObjects.Length; i++)
+       { 
+        Debug.Log("here is working!");
+        if (pinsObjects[i] != null && pinsObjects[i-1] != null)
+        {
+          if (pinsObjects[i].GetComponent<PinScriptNew>().myPrefabIndex == pinsObjects[i-1].GetComponent<PinScriptNew>().myPrefabIndex)
+           //pinsObjects[i].GetComponent<PinScriptNew>().myPrefabIndex == pinsObjects[i+1].GetComponent<PinScriptNew>().myPrefabIndex
+         
+          {
+          Destroy(pinsObjects[i]);
+          Destroy(pinsObjects[i-1]);
+          }
+        }
+       }
+     
+    }
      public  void NextRow()
         {
             offsetx = 0;
@@ -70,6 +101,7 @@ public class PinsCreator : MonoBehaviour
          if(i > pins.Length - rows - 1)
          {
          var pin = Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
+         pin.GetComponent<PinScriptNew>().myPrefabIndex = random;
          }
          else
          {
@@ -96,35 +128,23 @@ public class PinsCreator : MonoBehaviour
 
     void AddAllPins()
      {
-      isPinsOnscene = true;
-      pins = new int [rows,collums];
-      pinsObjects = new GameObject [rows * collums];
-
-        for (int i=0; i < pins.Length; i++)
-        {
-         Vector3 pinPosition = new Vector3(transform.position.x + offsetx, transform.position.y + offsety, transform.position.z);
-
-         int random = Random.Range(0, pinPrefabs.Length);
-         var cell = Instantiate( pinPrefabs[random], pinPosition, transform.rotation, parentObject);
-         pinsObjects[i] = parentObject.transform.GetChild(i).gameObject;
-         
-         pinCounter ++;
-         offsetx++;
-         
-          if (pinCounter == rows)
-          {
-            NextRow();
-          }
-          EditorUtility.SetDirty(cell);
-        }
-        pinCounter = 0;
-        offsetx = 0;
-        offsety = 0;  
-    }
+      if (pinCreationTimer > pinCreationColldown)
+      {   
+       AddPins();
+       pinCreationTimer = 0;
+      }
+     }
     [ContextMenu("Tools / Change All Pins")]
     void ChangeAllPins()
     {
       DeletePins();
       AddAllPins();
+    }
+    private void RefreshPinCreationTimer()
+    {
+      if (pinCreationTimer > maxPinCreationTimer)
+      {
+        pinCreationTimer = pinCreationColldown;
+      }
     }
 }

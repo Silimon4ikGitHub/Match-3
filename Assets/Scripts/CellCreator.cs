@@ -11,7 +11,8 @@ public class CellCreator : MonoBehaviour
     [Header ("Put Cell Detailes")]
     
     [SerializeField] private  int rows;
-    [SerializeField] private  int collums;    
+    [SerializeField] private  int collums;
+    public  int visibleCells;     
     private int[,] cells;
     private  int offsetx;
     private  int offsety;
@@ -27,7 +28,7 @@ public class CellCreator : MonoBehaviour
     
     public void AddCells()
     {
-      
+      visibleCells = rows * collums - rows * 2 - 1;
       cells = new int [rows,collums];
       cellsObjects = new GameObject [rows * collums];
 
@@ -43,6 +44,10 @@ public class CellCreator : MonoBehaviour
           if (cellCounter == rows)
           {
             NextRow();
+          }
+          if (i > visibleCells)
+          {
+            cell.GetComponent<Image>().enabled = false;
           }
           EditorUtility.SetDirty(cell);
         }
