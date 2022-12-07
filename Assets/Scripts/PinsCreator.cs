@@ -58,8 +58,8 @@ public class PinsCreator : MonoBehaviour
            //pinsObjects[i].GetComponent<PinScriptNew>().myPrefabIndex == pinsObjects[i+1].GetComponent<PinScriptNew>().myPrefabIndex
          
           {
-          Destroy(pinsObjects[i]);
-          Destroy(pinsObjects[i-1]);
+          //Destroy(pinsObjects[i]);
+          //Destroy(pinsObjects[i-1]);
           }
         }
        }

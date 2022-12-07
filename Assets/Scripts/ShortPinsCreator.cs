@@ -23,11 +23,12 @@ public class ShortPinsCreator : MonoBehaviour
     private  int offsetx;
     private  int offsety;
     private  int pinCounter;
+
+    [Header ("Timers")]
     [SerializeField] private float pinCreationColldown;
-    public float pinCreationTimer;
     [SerializeField] private float maxPinCreationTimer;
-
-
+    private float pinCreationTimer;
+    
     [Header ("Objects")]
     public  GameObject[] pinsObjects;
     [SerializeField] private  GameObject[] pinPrefabs;
@@ -43,14 +44,7 @@ public class ShortPinsCreator : MonoBehaviour
 
        MovingPinsInArray();
 
-       if (!cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 1].GetComponent<ShortCellScript>().isFull &&
-           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 2].GetComponent<ShortCellScript>().isFull &&
-           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 3].GetComponent<ShortCellScript>().isFull &&
-           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 4].GetComponent<ShortCellScript>().isFull &&
-           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 5].GetComponent<ShortCellScript>().isFull &&
-           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 6].GetComponent<ShortCellScript>().isFull &&
-           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 7].GetComponent<ShortCellScript>().isFull &&
-           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 8].GetComponent<ShortCellScript>().isFull) 
+       if (HirestCellsIsEmpty()) 
        {
          if (pinCreationTimer > pinCreationColldown)
          {
@@ -156,5 +150,23 @@ public class ShortPinsCreator : MonoBehaviour
       {
         pinCreationTimer = pinCreationColldown;
       }
+    }
+    bool HirestCellsIsEmpty()
+    {
+       if (!cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 1].GetComponent<ShortCellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 2].GetComponent<ShortCellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 3].GetComponent<ShortCellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 4].GetComponent<ShortCellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 5].GetComponent<ShortCellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 6].GetComponent<ShortCellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 7].GetComponent<ShortCellScript>().isFull &&
+           !cellCreatorScript.cellsObjects[cellCreatorScript.cellsObjects.Length - 8].GetComponent<ShortCellScript>().isFull)
+           {
+            return true;
+           }
+           else
+           {
+            return false;
+           }
     }
 }
