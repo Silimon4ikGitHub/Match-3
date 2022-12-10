@@ -49,20 +49,8 @@ public class PinsCreator : MonoBehaviour
          AddAllPins();
        }
 
-       for (int i=0; i < pinsObjects.Length; i++)
-       { 
-        Debug.Log("here is working!");
-        if (pinsObjects[i] != null && pinsObjects[i-1] != null)
-        {
-          if (pinsObjects[i].GetComponent<PinScriptNew>().myPrefabIndex == pinsObjects[i-1].GetComponent<PinScriptNew>().myPrefabIndex)
-           //pinsObjects[i].GetComponent<PinScriptNew>().myPrefabIndex == pinsObjects[i+1].GetComponent<PinScriptNew>().myPrefabIndex
-         
-          {
-          //Destroy(pinsObjects[i]);
-          //Destroy(pinsObjects[i-1]);
-          }
-        }
-       }
+       FindTwoSamePinHorizontal();
+       FreeLeavedArrayObjects();
      
     }
      public  void NextRow()
@@ -145,6 +133,48 @@ public class PinsCreator : MonoBehaviour
       if (pinCreationTimer > maxPinCreationTimer)
       {
         pinCreationTimer = pinCreationColldown;
+      }
+    }
+
+    void FindTwoSamePinHorizontal()
+    {
+      for (int i=0; i < pinsObjects.Length; i++)
+       { 
+        
+
+        if (pinsObjects[i] != null &&
+         pinsObjects[i].GetComponent<PinScriptNew>().amiInside == true &&
+         pinsObjects[i].GetComponent<PinScriptNew>()._myArrayIndex >= 1 &&
+         pinsObjects[i].GetComponent<PinScriptNew>()._myArrayIndex < cellCreatorScript.visibleCells &&
+         pinsObjects[i-1] != null)
+        {
+        GameObject currentPin = pinsObjects[i];
+        PinScriptNew currentPinScript = pinsObjects[i].GetComponent<PinScriptNew>();
+        GameObject otherPin = pinsObjects[i-1];
+        PinScriptNew otherPinScript = pinsObjects[i-1].GetComponent<PinScriptNew>();
+
+          if (currentPinScript.myPrefabIndex == otherPinScript.myPrefabIndex)
+          {
+            Destroy(currentPin);
+            Destroy(otherPin);
+            pinsObjects[i] = null;
+          }
+        }
+       }
+    }
+
+    void FreeLeavedArrayObjects()
+    {
+      for (int i=0; i < pinsObjects.Length; i++)
+      {
+        if (pinsObjects[i] != null)
+        {
+          if (pinsObjects[i].GetComponent<PinScriptNew>().amiInside == false)
+          {
+            pinsObjects[i] = null;
+            Debug.Log("Here is Working!");
+          }
+        }
       }
     }
 }

@@ -9,6 +9,8 @@ public class PinScriptNew : MonoBehaviour
 
     [Header("For Check Only")]
     [SerializeField] private int myArrayIndex;
+    public int _myArrayIndex;
+    public bool amiInside;
     public int myPrefabIndex;
     [SerializeField] private bool IsLocationInField(int rowIndex) => myArrayIndex >= pinsCreatorScript.rows;
     [SerializeField] private Vector3 pinPosition;
@@ -40,7 +42,9 @@ public class PinScriptNew : MonoBehaviour
 
         pinsCreatorScript.pinsObjects[myArrayIndex] = transform.gameObject;
         currentCell = cellCreatorScript.cellsObjects[myArrayIndex].GetComponent<CellScript>();
-
+        
+        _myArrayIndex = myArrayIndex;
+        
         MoveToNextCell();
 
         CheckNextCell();
@@ -62,12 +66,17 @@ public class PinScriptNew : MonoBehaviour
 
             if (pinPosition == cellPosition) 
             {
+                amiInside = true;
                 pinsCreatorScript.pinsObjects[myArrayIndex] = transform.gameObject;
 
                 if (!nextCell.isFull)
                 {
                     myArrayIndex = myArrayIndex - pinsCreatorScript.rows;
                 }
+            }
+            else
+            {
+                amiInside = false;
             }
         }
     }
