@@ -9,8 +9,10 @@ public class PinScriptNew : MonoBehaviour
 
     [Header("For Check Only")]
     [SerializeField] private int myArrayIndex;
+    [SerializeField] private float maxImInsideTimer = 20;
+    public float imInsideTimer;
     public int _myArrayIndex;
-    public bool amiInside;
+    public bool amInside;
     public int myPrefabIndex;
     [SerializeField] private bool IsLocationInField(int rowIndex) => myArrayIndex >= pinsCreatorScript.rows;
     [SerializeField] private Vector3 pinPosition;
@@ -49,6 +51,8 @@ public class PinScriptNew : MonoBehaviour
 
         CheckNextCell();
 
+        InsideTimer();
+
     }
     void MoveToNextCell()
     {
@@ -66,7 +70,8 @@ public class PinScriptNew : MonoBehaviour
 
             if (pinPosition == cellPosition) 
             {
-                amiInside = true;
+                amInside = true;
+                
                 pinsCreatorScript.pinsObjects[myArrayIndex] = transform.gameObject;
 
                 if (!nextCell.isFull)
@@ -76,9 +81,27 @@ public class PinScriptNew : MonoBehaviour
             }
             else
             {
-                amiInside = false;
+                amInside = false;
+                
             }
         }
+    }
+
+    void InsideTimer()
+    {
+        if (amInside)
+        {
+        imInsideTimer = imInsideTimer + Time.deltaTime;
+        }
+        if (!amInside)
+        {
+        imInsideTimer = 0;
+        }
+        if (imInsideTimer > maxImInsideTimer)
+        {
+            imInsideTimer = 1;
+        }
+
     }
     void OnMouseDown()
     {

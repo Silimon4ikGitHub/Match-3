@@ -26,6 +26,7 @@ public class PinsCreator : MonoBehaviour
     private  int pinCounter;
     private float pinCreationTimer;
     private float maxPinCreationTimer = 1000;
+    private float insideTimerDelay = 0.5f;
 
 
     [Header ("Objects")]
@@ -49,7 +50,7 @@ public class PinsCreator : MonoBehaviour
          AddAllPins();
        }
 
-       FindTwoSamePinHorizontal();
+       DestroyThreeSamePinHorizontal();
        FreeLeavedArrayObjects();
      
     }
@@ -136,14 +137,12 @@ public class PinsCreator : MonoBehaviour
       }
     }
 
-    void FindTwoSamePinHorizontal()
+    void DestroyThreeSamePinHorizontal()
     {
       for (int i=0; i < pinsObjects.Length; i++)
        { 
-        
-       
         if (pinsObjects[i] != null &&
-         pinsObjects[i].GetComponent<PinScriptNew>().amiInside == true &&
+         pinsObjects[i].GetComponent<PinScriptNew>().amInside == true &&
          pinsObjects[i].GetComponent<PinScriptNew>()._myArrayIndex >= 1 &&
          pinsObjects[i].GetComponent<PinScriptNew>()._myArrayIndex < cellCreatorScript.visibleCells &&
          pinsObjects[i-1] != null &&
@@ -156,17 +155,23 @@ public class PinsCreator : MonoBehaviour
         GameObject rightPin = pinsObjects[i+1];
         PinScriptNew rightPinScript = pinsObjects[i+1].GetComponent<PinScriptNew>();
         Debug.Log(3%4);
-         if (currentPinScript._myArrayIndex % 4 != 0 || currentPinScript._myArrayIndex % 4 != 3)
+         if (currentPinScript._myArrayIndex % 4 != 0 && currentPinScript._myArrayIndex % 4 != 3)
          {
 
           if (currentPinScript.myPrefabIndex == leftPinScript.myPrefabIndex && currentPinScript.myPrefabIndex == rightPinScript.myPrefabIndex)
           {
-            Destroy(currentPin);
-            Destroy(leftPin);
-            Destroy(rightPin);
-            pinsObjects[i] = null;
-            pinsObjects[i-1] = null;
-            pinsObjects[i+1] = null;
+
+            if(currentPinScript.imInsideTimer > insideTimerDelay &&
+               leftPinScript.imInsideTimer > insideTimerDelay &&
+               rightPinScript.imInsideTimer > insideTimerDelay)
+               {
+                Destroy(currentPin);
+                Destroy(leftPin);
+                Destroy(rightPin);
+                pinsObjects[i] = null;
+                pinsObjects[i-1] = null;
+                pinsObjects[i+1] = null;
+               }
           }
          }
         }
@@ -179,7 +184,7 @@ public class PinsCreator : MonoBehaviour
       {
         if (pinsObjects[i] != null)
         {
-          if (pinsObjects[i].GetComponent<PinScriptNew>().amiInside == false)
+          if (pinsObjects[i].GetComponent<PinScriptNew>().amInside == false)
           {
             pinsObjects[i] = null;
             Debug.Log("Here is Working!");
