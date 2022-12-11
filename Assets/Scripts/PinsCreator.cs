@@ -141,24 +141,34 @@ public class PinsCreator : MonoBehaviour
       for (int i=0; i < pinsObjects.Length; i++)
        { 
         
-
+       
         if (pinsObjects[i] != null &&
          pinsObjects[i].GetComponent<PinScriptNew>().amiInside == true &&
          pinsObjects[i].GetComponent<PinScriptNew>()._myArrayIndex >= 1 &&
          pinsObjects[i].GetComponent<PinScriptNew>()._myArrayIndex < cellCreatorScript.visibleCells &&
-         pinsObjects[i-1] != null)
+         pinsObjects[i-1] != null &&
+         pinsObjects[i+1] != null)
         {
         GameObject currentPin = pinsObjects[i];
         PinScriptNew currentPinScript = pinsObjects[i].GetComponent<PinScriptNew>();
-        GameObject otherPin = pinsObjects[i-1];
-        PinScriptNew otherPinScript = pinsObjects[i-1].GetComponent<PinScriptNew>();
+        GameObject leftPin = pinsObjects[i-1];
+        PinScriptNew leftPinScript = pinsObjects[i-1].GetComponent<PinScriptNew>();
+        GameObject rightPin = pinsObjects[i+1];
+        PinScriptNew rightPinScript = pinsObjects[i+1].GetComponent<PinScriptNew>();
+        Debug.Log(3%4);
+         if (currentPinScript._myArrayIndex % 4 != 0 || currentPinScript._myArrayIndex % 4 != 3)
+         {
 
-          if (currentPinScript.myPrefabIndex == otherPinScript.myPrefabIndex)
+          if (currentPinScript.myPrefabIndex == leftPinScript.myPrefabIndex && currentPinScript.myPrefabIndex == rightPinScript.myPrefabIndex)
           {
             Destroy(currentPin);
-            Destroy(otherPin);
+            Destroy(leftPin);
+            Destroy(rightPin);
             pinsObjects[i] = null;
+            pinsObjects[i-1] = null;
+            pinsObjects[i+1] = null;
           }
+         }
         }
        }
     }
