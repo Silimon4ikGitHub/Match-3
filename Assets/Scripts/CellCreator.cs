@@ -74,7 +74,6 @@ public class CellCreator : MonoBehaviour
       }
      }
      
-    //========ITS NOT MY;)========
     public override bool Equals(object obj)
     {
         return obj is CellCreator creator &&
